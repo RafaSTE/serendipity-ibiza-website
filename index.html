@@ -129,7 +129,7 @@
 /* CALCULATOR */
 .rl-ibiza .rl-rates{background:radial-gradient(rgba(4,101,103,.05) 1px, transparent 1.6px) 0 0/30px 30px, radial-gradient(80% 60% at 50% -6%, rgba(4,101,103,.06), transparent 55%), var(--gray);padding:118px 0;text-align:center}
 .rl-ibiza .rl-rate-note{margin:.9rem auto 0;max-width:54ch;font-size:1rem;color:var(--muted)}
-.rl-ibiza .rl-calc{max-width:680px;margin:50px auto 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;text-align:left;box-shadow:0 10px 40px rgba(0,0,0,.05)}
+.rl-ibiza .rl-calc{max-width:680px;width:100%;margin:50px auto 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;text-align:left;box-shadow:0 10px 40px rgba(0,0,0,.05);overflow:hidden}
 .rl-ibiza .rl-calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .rl-ibiza .rl-field{display:flex;flex-direction:column;gap:8px}
 .rl-ibiza .rl-field--wide{grid-column:1/-1}
@@ -244,7 +244,10 @@
   .rl-ibiza .rl-grid3,.rl-ibiza .rl-grid2,.rl-ibiza .rl-calc-grid{grid-template-columns:1fr}
   .rl-ibiza .rl-btn{width:100%;min-width:0}
   .rl-ibiza .rl-cta{flex-direction:column}
-  .rl-ibiza .rl-calc{padding:24px}
+  .rl-ibiza .rl-calc{padding:20px;margin-left:0;margin-right:0;border-radius:16px;width:100%;max-width:100%}
+}
+@media(max-width:400px){
+  .rl-ibiza .rl-calc{padding:16px;border-radius:14px}
 }
 @media(prefers-reduced-motion:reduce){
   .rl-ibiza *{transition:none!important;animation:none!important}
