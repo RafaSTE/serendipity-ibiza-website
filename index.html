@@ -562,6 +562,14 @@
 
         <div class="rl-faq-item">
           <button class="rl-faq-q" type="button" aria-expanded="false">
+            <span data-en="When should I leave for the airport?" data-es="¿Cuándo debo salir hacia el aeropuerto?" data-fr="Quand dois-je partir pour l'aéroport ?" data-de="Wann sollte ich zum Flughafen aufbrechen?">When should I leave for the airport?</span>
+            <span class="rl-faq-ic" aria-hidden="true"></span>
+          </button>
+          <div class="rl-faq-a"><p data-en="We recommend leaving your accommodation at least 3 hours before your flight departure. This allows time for the transfer, check-in, security and any unexpected delays." data-es="Recomendamos salir de tu alojamiento al menos 3 horas antes de tu vuelo. Esto permite tiempo suficiente para el traslado, check-in, seguridad y cualquier imprevisto." data-fr="Nous recommandons de quitter votre logement au moins 3 heures avant le départ de votre vol. Cela laisse le temps pour le transfert, l'enregistrement, la sécurité et tout imprévu." data-de="Wir empfehlen, Ihre Unterkunft mindestens 3 Stunden vor Ihrem Abflug zu verlassen. So bleibt genug Zeit für den Transfer, das Einchecken, die Sicherheitskontrolle und eventuelle Verzögerungen.">We recommend leaving your accommodation at least 3 hours before your flight departure. This allows time for the transfer, check-in, security and any unexpected delays.</p></div>
+        </div>
+
+        <div class="rl-faq-item">
+          <button class="rl-faq-q" type="button" aria-expanded="false">
             <span data-en="How far in advance should I book?" data-es="¿Con cuánta anticipación debo reservar?" data-fr="Combien de temps à l’avance dois-je réserver ?" data-de="Wie weit im Voraus sollte ich buchen?">How far in advance should I book?</span>
             <span class="rl-faq-ic" aria-hidden="true"></span>
           </button>
@@ -615,7 +623,21 @@
         <label><span data-en="Flight number" data-es="Número de vuelo" data-fr="Numéro de vol" data-de="Flugnummer">Flight number</span><input id="bk-flight" type="text" placeholder="—"></label>
         <label><span data-en="Passengers" data-es="Pasajeros" data-fr="Passagers" data-de="Personen">Passengers</span><input id="bk-paxview" type="text" readonly></label>
         <label><span data-en="Date" data-es="Fecha" data-fr="Date" data-de="Datum">Date</span><input id="bk-date" type="date"></label>
-        <label><span data-en="Time" data-es="Time" data-fr="Heure" data-de="Uhrzeit">Time</span><input id="bk-time" type="time"></label>
+        <label><span data-en="Time" data-es="Hora" data-fr="Heure" data-de="Uhrzeit">Time</span>
+          <div style="display:flex;gap:6px">
+            <select id="bk-hour" style="flex:1;padding:12px 14px;font-size:1rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px">
+              <option value="">--</option>
+              <option>12</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option>
+            </select>
+            <select id="bk-min" style="flex:1;padding:12px 14px;font-size:1rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px">
+              <option value="00">00</option><option value="15">15</option><option value="30">30</option><option value="45">45</option>
+            </select>
+            <select id="bk-ampm" style="flex:1;padding:12px 14px;font-size:1rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px">
+              <option>AM</option><option>PM</option>
+            </select>
+          </div>
+        </label>
         <label class="wide"><span data-en="Notes (child seats, luggage, etc.)" data-es="Notas (sillas de niño, equipaje, etc.)" data-fr="Notes (sièges enfant, bagages, etc.)" data-de="Hinweise (Kindersitze, Gepäck usw.)">Notes</span><textarea id="bk-notes"></textarea></label>
       </div>
       <!-- Payment method selector -->
@@ -642,9 +664,14 @@
             <span style="font-size:1.15rem;font-weight:600;color:var(--teal);letter-spacing:.01em">@serendipitytravelexperiencesllc</span>
             <button type="button" class="rl-copy-btn" data-copy="@serendipitytravelexperiencesllc" aria-label="Copy" style="background:var(--teal);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s">Copy</button>
           </div>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:8px" data-en="After sending, share the payment confirmation via WhatsApp so we can confirm your booking." data-es="Después de enviar, comparte la confirmación de pago por WhatsApp para confirmar tu reserva." data-fr="Après l’envoi, partagez la confirmation de paiement via WhatsApp." data-de="Teilen Sie nach dem Senden die Zahlungsbestätigung über WhatsApp.">After sending, share the payment confirmation via WhatsApp so we can confirm your booking.</p>
+          <p style="font-size:.82rem;color:#c0392b;font-weight:600;margin-top:10px" data-en="⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled." data-es="⏰ El pago debe recibirse en un máximo de 1 hora o la reserva se cancelará automáticamente." data-fr="⏰ Le paiement doit être reçu dans l’heure, sinon la réservation sera automatiquement annulée." data-de="⏰ Die Zahlung muss innerhalb von 1 Stunde eingehen, sonst wird die Reservierung automatisch storniert.">⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled.</p>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:10px" data-en="After sending, share your payment receipt via WhatsApp or email:" data-es="Después de enviar, comparte tu comprobante de pago por WhatsApp o correo:" data-fr="Après l’envoi, partagez votre reçu de paiement par WhatsApp ou e-mail :" data-de="Teilen Sie nach dem Senden Ihren Zahlungsbeleg per WhatsApp oder E-Mail:">After sending, share your payment receipt via WhatsApp or email:</p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;align-items:center">
+            <span style="font-size:.9rem">📱 <a href="https://wa.me/529841386226" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:underline">WhatsApp</a></span>
+            <span style="font-size:.9rem">📧 <a href="mailto:rafael@serendipitytravelexperiences.com" style="color:var(--teal);font-weight:600;text-decoration:underline">rafael@serendipitytravelexperiences.com</a></span>
+          </div>
         </div>
-        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Confirm on WhatsApp" data-es="Confirmar por WhatsApp" data-fr="Confirmer sur WhatsApp" data-de="Auf WhatsApp bestätigen">Confirm on WhatsApp</button>
+        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Send receipt on WhatsApp" data-es="Enviar comprobante por WhatsApp" data-fr="Envoyer le reçu sur WhatsApp" data-de="Beleg per WhatsApp senden">Send receipt on WhatsApp</button>
       </div>
 
       <!-- Revolut panel -->
@@ -655,9 +682,14 @@
             <span style="font-size:1.15rem;font-weight:600;color:var(--teal);letter-spacing:.01em">@rafaeldeemmanuel</span>
             <button type="button" class="rl-copy-btn" data-copy="@rafaeldeemmanuel" aria-label="Copy" style="background:var(--teal);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s">Copy</button>
           </div>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:8px" data-en="After sending, share the payment confirmation via WhatsApp so we can confirm your booking." data-es="Después de enviar, comparte la confirmación de pago por WhatsApp para confirmar tu reserva." data-fr="Après l’envoi, partagez la confirmation de paiement via WhatsApp." data-de="Teilen Sie nach dem Senden die Zahlungsbestätigung über WhatsApp.">After sending, share the payment confirmation via WhatsApp so we can confirm your booking.</p>
+          <p style="font-size:.82rem;color:#c0392b;font-weight:600;margin-top:10px" data-en="⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled." data-es="⏰ El pago debe recibirse en un máximo de 1 hora o la reserva se cancelará automáticamente." data-fr="⏰ Le paiement doit être reçu dans l’heure, sinon la réservation sera automatiquement annulée." data-de="⏰ Die Zahlung muss innerhalb von 1 Stunde eingehen, sonst wird die Reservierung automatisch storniert.">⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled.</p>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:10px" data-en="After sending, share your payment receipt via WhatsApp or email:" data-es="Después de enviar, comparte tu comprobante de pago por WhatsApp o correo:" data-fr="Après l’envoi, partagez votre reçu de paiement par WhatsApp ou e-mail :" data-de="Teilen Sie nach dem Senden Ihren Zahlungsbeleg per WhatsApp oder E-Mail:">After sending, share your payment receipt via WhatsApp or email:</p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;align-items:center">
+            <span style="font-size:.9rem">📱 <a href="https://wa.me/529841386226" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:underline">WhatsApp</a></span>
+            <span style="font-size:.9rem">📧 <a href="mailto:rafael@serendipitytravelexperiences.com" style="color:var(--teal);font-weight:600;text-decoration:underline">rafael@serendipitytravelexperiences.com</a></span>
+          </div>
         </div>
-        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Confirm on WhatsApp" data-es="Confirmar por WhatsApp" data-fr="Confirmer sur WhatsApp" data-de="Auf WhatsApp bestätigen">Confirm on WhatsApp</button>
+        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Send receipt on WhatsApp" data-es="Enviar comprobante por WhatsApp" data-fr="Envoyer le reçu sur WhatsApp" data-de="Beleg per WhatsApp senden">Send receipt on WhatsApp</button>
       </div>
 
       <a class="rl-form-wa" id="bk-wa" href="#" rel="noopener" target="_blank" data-en="Prefer to book on WhatsApp?" data-es="¿Prefieres reservar por WhatsApp?" data-fr="Vous préférez WhatsApp ?" data-de="Lieber über WhatsApp buchen?">Prefer WhatsApp?</a>
@@ -703,6 +735,7 @@
     {"@type":"Question","name":"Can I hire a car and driver by the hour?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our by the hour service keeps a Mercedes and chauffeur at your disposal across the island, from 4 to 24 hours."}},
     {"@type":"Question","name":"Do you offer club and night transfers?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle transfers to Pacha, Hi, Ushuaia, Amnesia and every major venue, at any hour of the night."}},
     {"@type":"Question","name":"Do you provide child seats?","acceptedAnswer":{"@type":"Answer","text":"Yes, child seats and boosters are available on request. Just tell us the ages when you book."}},
+    {"@type":"Question","name":"When should I leave for the airport?","acceptedAnswer":{"@type":"Answer","text":"We recommend leaving your accommodation at least 3 hours before your flight departure. This allows time for the transfer, check-in, security and any unexpected delays."}},
     {"@type":"Question","name":"How far in advance should I book?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking at least 24 to 48 hours ahead, especially in high season and on festival weekends."}}
   ]
 }
@@ -925,9 +958,9 @@
   function pay(){
     var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
     var name=g('#bk-name'), email=g('#bk-email'), phone=g('#bk-phone'), code=$bkCode?$bkCode.value:'';
-    var date=g('#bk-date'), time=g('#bk-time'), flight=g('#bk-flight'), notes=g('#bk-notes'), dir=$bkDir?$bkDir.value:'';
+    var bkH=g('#bk-hour'),bkM=g('#bk-min'),bkAP=g('#bk-ampm'); var time=(bkH?(bkH+':'+bkM+' '+bkAP):''); var date=g('#bk-date'), flight=g('#bk-flight'), notes=g('#bk-notes'), dir=$bkDir?$bkDir.value:'';
     var ERR={en:'Please fill in your name, a valid email, phone, date and time.',es:'Completa tu nombre, un correo válido, teléfono, fecha y hora.',fr:'Veuillez indiquer nom, e-mail valide, téléphone, date et heure.',de:'Bitte Name, gültige E-Mail, Telefon, Datum und Uhrzeit angeben.'};
-    if(!name||!email||!/.+@.+\..+/.test(email)||!phone||!date||!time){ if($bkErr){ $bkErr.style.color='#c0392b'; $bkErr.textContent=ERR[lang]||ERR.en; } return; }
+    if(!name||!email||!/.+@.+\..+/.test(email)||!phone||!date||!bkH){ if($bkErr){ $bkErr.style.color='#c0392b'; $bkErr.textContent=ERR[lang]||ERR.en; } return; }
     var payload={ veh:state.veh, svc:state.svc, from:state.from, to:state.to, trip:state.trip, hours:state.hours, pax:state.pax, pickupName:state.pickupName, dropoffName:state.dropoffName, lang:lang, name:name, email:email, phone:(code+' '+phone).trim(), flight:flight, direction:dir, date:date, time:time, notes:notes };
     if($bkPay) $bkPay.setAttribute('disabled','disabled');
     var WAIT={en:'Redirecting to secure payment…',es:'Redirigiendo al pago seguro…',fr:'Redirection vers le paiement…',de:'Weiterleitung zur Zahlung…'};
