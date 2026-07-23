@@ -998,9 +998,43 @@
   root.querySelectorAll('.rl-wa-confirm').forEach(function(b){
     b.addEventListener('click', function(){
       var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
-      var name=g('#bk-name'), v=veh(state.veh);
+      var name=g('#bk-name'), email=g('#bk-email'), phone=g('#bk-phone'), code=$bkCode?$bkCode.value:'';
+      var date=g('#bk-date'), bkH=g('#bk-hour'), bkM=g('#bk-min'), bkAP=g('#bk-ampm');
+      var time=bkH?(bkH+':'+bkM+' '+bkAP):'';
+      var flight=g('#bk-flight'), notes=g('#bk-notes'), dir=$bkDir?$bkDir.value:'';
+      var v=veh(state.veh);
       var pm = b.closest('#pm-wise') ? 'Wise' : 'Revolut';
-      var msg = T[lang].bookintro + name + ', \u20ac' + lastTotal + ' ' + v[lang] + ', ' + state.pax + ' ' + T[lang].paxword + '. Paid via ' + pm + '.';
+      var tag = pm==='Wise' ? '@serendipitytravelexperiencesllc' : '@rafaeldeemmanuel';
+
+      // Validate
+      if(!name||!email||!/.+@.+\..+/.test(email)||!phone||!date||!bkH){
+        alert(lang==='es'?'Completa nombre, email, teléfono, fecha y hora.':lang==='fr'?'Remplissez nom, e-mail, téléphone, date et heure.':lang==='de'?'Bitte Name, E-Mail, Telefon, Datum und Uhrzeit angeben.':'Please fill in name, email, phone, date and time.');
+        return;
+      }
+
+      // Build route info
+      var route;
+      if(state.svc==='hourly'){ route=v[lang]+' · '+state.hours+'h'; }
+      else {
+        var pk=state.pickupName||(T[lang].zone+state.from), dp=state.dropoffName||(T[lang].zone+state.to);
+        var tripTxt=state.trip==='round'?T[lang].roundtrip:T[lang].oneway;
+        route=pk+' '+T[lang].to+' '+dp+', '+tripTxt;
+      }
+
+      // Send confirmation email to customer with receipt instructions
+      var payload = {
+        name:name, email:email, phone:(code+' '+phone).trim(),
+        vehicle:v[lang], route:route, date:date, time:time, flight:flight,
+        pax:state.pax, notes:notes, direction:dir,
+        amount:lastTotal, method:pm, tag:tag, lang:lang
+      };
+      fetch('/api/booking-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(function(r){ return r.json(); })
+        .then(function(d){ console.log('Email sent:', d); })
+        .catch(function(e){ console.error('Email error:', e); });
+
+      // Open WhatsApp
+      var msg = T[lang].bookintro + name + ', €' + lastTotal + ' ' + v[lang] + ', ' + state.pax + ' ' + T[lang].paxword + '. ' + route + '. Paid via ' + pm + '.';
       window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg), '_blank');
     });
   });
