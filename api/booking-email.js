@@ -173,19 +173,27 @@ module.exports = async function handler(req, res) {
     '⚡ Action: Verify payment receipt, then book with provider.',
   ].join('\n');
 
-  // Send emails via internal /api/send-email endpoint (uses nodemailer SMTP)
+  // Send emails directly via nodemailer SMTP
+  const nodemailer = require('nodemailer');
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'rafael@serendipitytravelexperiences.com',
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
+
   async function sendEmail(to, subject, textBody, htmlBody) {
-    const baseUrl = process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 'https://www.serendipitytravelibiza.com';
-    const response = await fetch(baseUrl + '/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-internal-key': process.env.STRIPE_SECRET_KEY },
-      body: JSON.stringify({ to, subject, text: textBody, html: htmlBody }),
+    const info = await transporter.sendMail({
+      from: 'Serendipity Travel Ibiza <rafael@serendipitytravelexperiences.com>',
+      to,
+      subject,
+      text: textBody || subject,
+      html: htmlBody || '<p>' + (textBody || subject) + '</p>',
     });
-    if (!response.ok) {
-      const err = await response.text();
-      throw new Error('send-email ' + response.status + ': ' + err);
-    }
-    return response.json();
+    return { sent: true, id: info.messageId };
   }
 
   try {
