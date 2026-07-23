@@ -173,46 +173,17 @@ module.exports = async function handler(req, res) {
     '⚡ Action: Verify payment receipt, then book with provider.',
   ].join('\n');
 
-  // Send both emails via Gmail API
-  const token_gws = process.env.GOOGLE_WORKSPACE_CLI_TOKEN;
-  const from = 'rafael@serendipitytravelexperiences.com';
-
+  // Send emails via internal /api/send-email endpoint (uses nodemailer SMTP)
   async function sendEmail(to, subject, textBody, htmlBody) {
-    const boundary = '----=_Part_' + Date.now() + Math.random();
-    const emailLines = [
-      'From: Serendipity Travel Ibiza <' + from + '>',
-      'To: ' + to,
-      'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=',
-      'MIME-Version: 1.0',
-      'Content-Type: multipart/alternative; boundary="' + boundary + '"',
-      '',
-      '--' + boundary,
-      'Content-Type: text/plain; charset=UTF-8',
-      'Content-Transfer-Encoding: base64',
-      '',
-      Buffer.from(textBody || subject).toString('base64'),
-      '',
-      '--' + boundary,
-      'Content-Type: text/html; charset=UTF-8',
-      'Content-Transfer-Encoding: base64',
-      '',
-      Buffer.from(htmlBody || '<p>' + (textBody || subject) + '</p>').toString('base64'),
-      '',
-      '--' + boundary + '--',
-    ];
-
-    const rawEmail = Buffer.from(emailLines.join('\r\n'))
-      .toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-
-    const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+    const baseUrl = process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 'https://www.serendipitytravelibiza.com';
+    const response = await fetch(baseUrl + '/api/send-email', {
       method: 'POST',
-      headers: { 'Authorization': 'Bearer ' + token_gws, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ raw: rawEmail }),
+      headers: { 'Content-Type': 'application/json', 'x-internal-key': process.env.STRIPE_SECRET_KEY },
+      body: JSON.stringify({ to, subject, text: textBody, html: htmlBody }),
     });
-
     if (!response.ok) {
       const err = await response.text();
-      throw new Error('Gmail ' + response.status + ': ' + err);
+      throw new Error('send-email ' + response.status + ': ' + err);
     }
     return response.json();
   }
