@@ -175,32 +175,35 @@ module.exports = async function handler(req, res) {
 </body>
 </html>`;
 
-    // Send emails via the /api/send-email endpoint (internal call)
-    try {
-      const baseUrl = process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 'https://www.serendipitytravelibiza.com';
+    // Send emails directly via nodemailer SMTP
+    const nodemailer = require('nodemailer');
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'rafael@serendipitytravelexperiences.com',
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+    });
 
+    try {
       // Send internal notification to Rafael
-      await fetch(baseUrl + '/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-internal-key': process.env.STRIPE_SECRET_KEY },
-        body: JSON.stringify({
-          to: 'rafael@serendipitytravelexperiences.com',
-          subject: '🚨 New Booking — ' + (meta.guest_name || 'Guest') + ' — €' + amount,
-          text: internalMsg,
-          html: '<pre style="font-family:sans-serif;font-size:14px;line-height:1.6">' + internalMsg.replace(/\n/g,'<br>') + '</pre>'
-        })
+      await transporter.sendMail({
+        from: 'Serendipity Travel Ibiza <rafael@serendipitytravelexperiences.com>',
+        to: 'rafael@serendipitytravelexperiences.com',
+        subject: '🚨 New Booking — ' + (meta.guest_name || 'Guest') + ' — €' + amount,
+        text: internalMsg,
+        html: '<pre style="font-family:sans-serif;font-size:14px;line-height:1.6">' + internalMsg.replace(/\n/g,'<br>') + '</pre>'
       });
 
       // Send customer confirmation
       if (session.customer_email) {
-        await fetch(baseUrl + '/api/send-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'x-internal-key': process.env.STRIPE_SECRET_KEY },
-          body: JSON.stringify({
-            to: session.customer_email,
-            subject: t.subject,
-            html: customerHtml
-          })
+        await transporter.sendMail({
+          from: 'Serendipity Travel Ibiza <rafael@serendipitytravelexperiences.com>',
+          to: session.customer_email,
+          subject: t.subject,
+          html: customerHtml
         });
       }
     } catch (emailErr) {
