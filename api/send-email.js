@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
 
@@ -12,63 +14,31 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Missing to or subject' });
   }
 
-  const from = 'rafael@serendipitytravelexperiences.com';
-
-  // Build RFC 2822 email
-  const boundary = '----=_Part_' + Date.now();
-  const emailLines = [
-    'From: Serendipity Travel Ibiza <' + from + '>',
-    'To: ' + to,
-    'Subject: =?UTF-8?B?' + Buffer.from(subject).toString('base64') + '?=',
-    'MIME-Version: 1.0',
-    'Content-Type: multipart/alternative; boundary="' + boundary + '"',
-    '',
-    '--' + boundary,
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: base64',
-    '',
-    Buffer.from(text || subject).toString('base64'),
-    '',
-    '--' + boundary,
-    'Content-Type: text/html; charset=UTF-8',
-    'Content-Transfer-Encoding: base64',
-    '',
-    Buffer.from(html || '<p>' + (text || subject) + '</p>').toString('base64'),
-    '',
-    '--' + boundary + '--',
-  ];
-
-  const rawEmail = Buffer.from(emailLines.join('\r\n'))
-    .toString('base64')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/, '');
-
-  // Send via Gmail API
-  const token = process.env.GOOGLE_WORKSPACE_CLI_TOKEN;
-  if (!token) {
-    console.error('No GOOGLE_WORKSPACE_CLI_TOKEN');
+  if (!process.env.GMAIL_APP_PASSWORD) {
+    console.error('No GMAIL_APP_PASSWORD configured');
     return res.status(500).json({ error: 'Email service not configured' });
   }
 
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'rafael@serendipitytravelexperiences.com',
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
+
   try {
-    const response = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + token,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ raw: rawEmail }),
+    const info = await transporter.sendMail({
+      from: 'Serendipity Travel Ibiza <rafael@serendipitytravelexperiences.com>',
+      to,
+      subject,
+      text: text || subject,
+      html: html || '<p>' + (text || subject) + '</p>',
     });
 
-    if (!response.ok) {
-      const err = await response.text();
-      console.error('Gmail API error:', response.status, err);
-      return res.status(500).json({ error: 'Email send failed', detail: err });
-    }
-
-    const result = await response.json();
-    return res.status(200).json({ sent: true, id: result.id });
+    return res.status(200).json({ sent: true, id: info.messageId });
   } catch (err) {
     console.error('Email error:', err);
     return res.status(500).json({ error: err.message });
