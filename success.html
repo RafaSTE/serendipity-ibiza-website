@@ -11,12 +11,15 @@
   *{box-sizing:border-box}
   body{margin:0;font-family:var(--sans);color:#fff;background:var(--teal-deep);
     min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;text-align:center}
-  .card{max-width:560px}
+  .card{max-width:600px}
   .tick{width:74px;height:74px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 26px}
   .tick svg{width:38px;height:38px;stroke:#fff;stroke-width:3;fill:none}
   h1{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,2.8rem);margin:0 0 14px;line-height:1.1}
-  p{font-size:1.05rem;line-height:1.6;color:rgba(255,255,255,.82);margin:0 auto 14px;max-width:460px}
+  p{font-size:1.05rem;line-height:1.6;color:rgba(255,255,255,.82);margin:0 auto 14px;max-width:500px}
   .en{display:block;margin-top:8px;color:rgba(255,255,255,.55);font-size:.95rem}
+  .tip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:18px 22px;margin:24px auto;max-width:480px;text-align:left}
+  .tip-title{font-weight:600;font-size:.95rem;color:#fff;margin-bottom:6px}
+  .tip p{font-size:.9rem;color:rgba(255,255,255,.7);margin:0;line-height:1.5}
   .btns{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   a.btn{display:inline-block;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.98rem}
   a.solid{background:#fff;color:var(--teal-deep)}
@@ -28,9 +31,22 @@
   <div class="card">
     <div class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
     <h1>¡Reserva confirmada!</h1>
-    <p>Gracias por tu pago. Hemos recibido tu reserva y te enviaremos la confirmación con los detalles del chofer a tu correo. Si necesitas cambiar algo, escríbenos por WhatsApp.
-      <span class="en">Booking confirmed. We received your payment and will email your confirmation with the chauffeur details shortly.</span>
+    <p>Gracias por tu pago. Hemos recibido tu reserva y te enviaremos la confirmación con los detalles del chofer a tu correo electrónico. Si necesitas cambiar algo, escríbenos por WhatsApp.
+      <span class="en">Booking confirmed! Thank you for your payment. We will email your confirmation with chauffeur details shortly. If you need to make any changes, contact us on WhatsApp.</span>
     </p>
+
+    <div class="tip">
+      <p class="tip-title">✈️ Salida de aeropuerto / Airport departure</p>
+      <p>Recomendamos salir de tu alojamiento al menos 3 horas antes de tu vuelo para tener tiempo suficiente para el traslado, check-in y seguridad.<br>
+      <span style="color:rgba(255,255,255,.5)">We recommend leaving your accommodation at least 3 hours before your flight to allow time for the transfer, check-in and security.</span></p>
+    </div>
+
+    <div class="tip">
+      <p class="tip-title">📱 Contacto / Contact</p>
+      <p>WhatsApp: <a href="https://wa.me/529841386226" style="color:var(--teal);font-weight:600" target="_blank">+52 984 138 6226</a><br>
+      Email: <a href="mailto:rafael@serendipitytravelexperiences.com" style="color:var(--teal);font-weight:600">rafael@serendipitytravelexperiences.com</a></p>
+    </div>
+
     <div class="btns">
       <a class="btn solid" href="/">Volver al inicio</a>
       <a class="btn ghost" id="wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -38,7 +54,6 @@
     <div class="brand">Serendipity Travel Ibiza</div>
   </div>
   <script>
-    // WhatsApp link (same number as the site; update if you get a Spain number)
     var WA='529841386226';
     var sid=new URLSearchParams(location.search).get('session_id')||'';
     var ref=sid?(' Ref: '+sid.slice(-8)):'';
