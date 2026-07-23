@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ibiza Airport Transfers &amp; Private Chauffeur | Serendipity Travel Ibiza</title>
+<title>Ibiza Airport Transfers &amp; Private Luxury Chauffeur | Serendipity</title>
 <meta name="description" content="Luxury private airport transfers and chauffeured Mercedes transportation across Ibiza. Fixed fares by zone, club and yacht transfers, Formentera ferry, English speaking drivers, 24/7. Book on WhatsApp.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <!-- EDIT the URLs below to your final address (root domain or subdomain) -->
@@ -62,6 +62,7 @@
 .rl-ibiza a{color:inherit;text-decoration:none}
 .rl-ibiza button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .rl-ibiza .rl-hidden{display:none!important}
+.rl-ibiza .rl-off{display:none!important}
 .rl-ibiza .rl-wrap{max-width:1040px;margin:0 auto;padding:0 22px;width:100%}
 .rl-ibiza .rl-eyebrow{font-size:.78rem;font-weight:500;color:var(--teal)}
 .rl-ibiza .rl-h2{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.35rem);font-weight:500;letter-spacing:-.005em;line-height:1.08;margin-top:.45rem}
@@ -104,7 +105,7 @@
 .rl-ibiza .rl-hero-eyebrow{font-size:.82rem;font-weight:500;color:var(--teal-lt)}
 .rl-ibiza .rl-hero h1{font-family:var(--serif);font-size:clamp(2.7rem,7vw,5.2rem);font-weight:500;letter-spacing:-.005em;line-height:1.04;margin:.6rem auto 0;max-width:15ch;text-shadow:0 2px 44px rgba(0,0,0,.45)}
 .rl-ibiza .rl-hero p.rl-hero-sub{margin:1.2rem auto 0;max-width:40ch;font-size:1.22rem;color:#e6e6ea;text-shadow:0 1px 26px rgba(0,0,0,.5)}
-.rl-ibiza .rl-hero-meta{margin-top:2.4rem;font-size:.78rem;letter-spacing:.06em;color:#7d7d82}
+.rl-ibiza .rl-hero-meta{margin-top:4rem;font-size:.8rem;letter-spacing:.08em;color:rgba(255,255,255,.72);text-shadow:0 1px 12px rgba(0,0,0,.35)}
 
 /* FLEET (two vehicles) */
 .rl-ibiza .rl-fleet{background:radial-gradient(72% 55% at 88% -8%, rgba(4,101,103,.09), transparent 60%), var(--white);padding:118px 0;text-align:center}
@@ -347,23 +348,23 @@
   <!-- CALCULATOR -->
   <section class="rl-rates" id="rates">
     <div class="rl-wrap rl-reveal">
-      <p class="rl-eyebrow" data-en="Price calculator" data-es="Calculadora de precios" data-fr="Calculateur de prix" data-de="Preisrechner">Price calculator</p>
-      <h2 class="rl-h2" data-en="Estimate your ride." data-es="Calcula tu servicio." data-fr="Estimez votre trajet." data-de="Schätzen Sie Ihre Fahrt.">Estimate your ride.</h2>
-      <p class="rl-rate-note" data-en="Choose a transfer between zones or a car by the hour. The final fare is confirmed on WhatsApp." data-es="Elige un traslado entre zonas o auto por horas. La tarifa final se confirma por WhatsApp." data-fr="Choisissez un transfert entre zones ou une voiture à l’heure. Le tarif final est confirmé sur WhatsApp." data-de="Wählen Sie einen Transfer zwischen Zonen oder ein Fahrzeug stundenweise. Der Endpreis wird über WhatsApp bestätigt.">Choose a transfer between zones or a car by the hour. The final fare is confirmed on WhatsApp.</p>
+      <p class="rl-eyebrow" data-en="Book in one minute" data-es="Reserva en un minuto" data-fr="Réservez en une minute" data-de="In einer Minute buchen">Book in one minute</p>
+      <h2 class="rl-h2" data-en="Where to? Instant price." data-es="¿A dónde vas? Precio al instante." data-fr="Où allez-vous ? Prix immédiat." data-de="Wohin? Sofortpreis.">Where to? Instant price.</h2>
+      <p class="rl-rate-note" data-en="Enter your destination, choose one way or round trip, and book. Fixed price, no surprises." data-es="Escribe tu destino, elige ida o ida y vuelta, y reserva. Precio fijo, sin sorpresas." data-fr="Indiquez votre destination, choisissez aller simple ou aller-retour, et réservez. Prix fixe, sans surprises." data-de="Geben Sie Ihr Ziel ein, wählen Sie einfache Fahrt oder Hin- und Rückfahrt und buchen Sie. Festpreis, keine Überraschungen.">Enter your destination, choose one way or round trip, and book. Fixed price, no surprises.</p>
 
       <div class="rl-calc">
         <div class="rl-calc-grid">
-          <label class="rl-field">
+          <label class="rl-field rl-off">
             <span data-en="Passengers" data-es="Pasajeros" data-fr="Passagers" data-de="Personen">Passengers</span>
             <select id="rl-pax" aria-label="Passengers"></select>
           </label>
 
-          <label class="rl-field">
+          <label class="rl-field rl-off">
             <span data-en="Recommended vehicle" data-es="Vehículo recomendado" data-fr="Véhicule recommandé" data-de="Empfohlenes Fahrzeug">Recommended vehicle</span>
             <select id="rl-veh" aria-label="Vehicle"></select>
           </label>
 
-          <div class="rl-field rl-field--wide">
+          <div class="rl-field rl-field--wide rl-off">
             <span data-en="Service" data-es="Servicio" data-fr="Service" data-de="Service">Service</span>
             <div class="rl-seg" id="rl-service" role="group">
               <button type="button" data-svc="transfer" class="is-active" data-en="Transfer" data-es="Traslado" data-fr="Transfert" data-de="Transfer">Transfer</button>
@@ -379,11 +380,11 @@
             <span data-en="Dropoff" data-es="Destino" data-fr="Destination" data-de="Zielort">Dropoff</span>
             <div id="rl-dropoff" class="rl-pac"></div>
           </label>
-          <label class="rl-field js-transfer">
+          <label class="rl-field js-transfer rl-off">
             <span data-en="Pickup zone" data-es="Zona de recogida" data-fr="Zone de prise en charge" data-de="Abholzone">Pickup zone</span>
             <select id="rl-from" aria-label="Pickup zone"></select>
           </label>
-          <label class="rl-field js-transfer">
+          <label class="rl-field js-transfer rl-off">
             <span data-en="Dropoff zone" data-es="Zona de destino" data-fr="Zone de destination" data-de="Zielzone">Dropoff zone</span>
             <select id="rl-to" aria-label="Dropoff zone"></select>
           </label>
@@ -621,7 +622,7 @@
           </select>
         </label>
         <label><span data-en="Flight number" data-es="Número de vuelo" data-fr="Numéro de vol" data-de="Flugnummer">Flight number</span><input id="bk-flight" type="text" placeholder="—"></label>
-        <label><span data-en="Passengers" data-es="Pasajeros" data-fr="Passagers" data-de="Personen">Passengers</span><input id="bk-paxview" type="text" readonly></label>
+        <label><span data-en="Passengers" data-es="Pasajeros" data-fr="Passagers" data-de="Personen">Passengers</span><select id="bk-paxview" aria-label="Passengers"></select></label>
         <label><span data-en="Date" data-es="Fecha" data-fr="Date" data-de="Datum">Date</span><input id="bk-date" type="date"></label>
         <label><span data-en="Time" data-es="Hora" data-fr="Heure" data-de="Uhrzeit">Time</span>
           <div style="display:flex;gap:6px">
@@ -957,8 +958,8 @@
   var DIAL=[['+34','España'],['+44','United Kingdom'],['+49','Deutschland'],['+33','France'],['+39','Italia'],['+31','Nederland'],['+32','Belgique'],['+41','Suisse'],['+43','Österreich'],['+351','Portugal'],['+353','Ireland'],['+45','Danmark'],['+46','Sverige'],['+47','Norge'],['+358','Suomi'],['+354','Ísland'],['+48','Polska'],['+30','Ελλάδα'],['+420','Česko'],['+36','Magyarország'],['+40','România'],['+385','Hrvatska'],['+386','Slovenija'],['+7','Россия'],['+380','Україна'],['+90','Türkiye'],['+972','Israel'],['+971','UAE'],['+966','Saudi Arabia'],['+974','Qatar'],['+965','Kuwait'],['+1','USA / Canada'],['+52','México'],['+55','Brasil'],['+54','Argentina'],['+56','Chile'],['+57','Colombia'],['+51','Perú'],['+61','Australia'],['+64','New Zealand'],['+81','日本'],['+82','한국'],['+86','中国'],['+91','India'],['+65','Singapore'],['+852','Hong Kong'],['+27','South Africa'],['+212','Morocco'],['+20','Egypt']];
   function buildDial(){ if(!$bkCode) return; $bkCode.innerHTML=''; DIAL.forEach(function(d){ var o=document.createElement('option'); o.value=d[0]; o.textContent=d[1]+' ('+d[0]+')'; $bkCode.appendChild(o); }); $bkCode.value='+34'; }
 
-  function openBooking(){
-    if(!$modal) return;
+  function renderModalSummary(){
+    if(!$mSum) return;
     var v=veh(state.veh), sum='<span class="rl-modal-price">€'+lastTotal+'</span>';
     if(state.svc==='hourly'){
       sum+='<b>'+v[lang]+'</b><br>'+state.pax+' '+T[lang].paxword+' · '+state.hours+' '+T[lang].hours;
@@ -967,7 +968,12 @@
       var tripTxt=state.trip==='round'?T[lang].roundtrip:T[lang].oneway;
       sum+='<b>'+v[lang]+'</b><br>'+pk+' '+T[lang].to+' '+dp+'<br>'+state.pax+' '+T[lang].paxword+' · '+tripTxt;
     }
-    if($mSum) $mSum.innerHTML=sum;
+    $mSum.innerHTML=sum;
+  }
+  function buildBkPax(){ if(!$bkPaxView) return; $bkPaxView.innerHTML=''; PAX_LIST.forEach(function(n){ var o=document.createElement('option'); o.value=n; o.textContent=n; $bkPaxView.appendChild(o); }); $bkPaxView.value=state.pax; }
+  function openBooking(){
+    if(!$modal) return;
+    renderModalSummary();
     if($bkPaxView) $bkPaxView.value=state.pax;
     if($bkDir){ var pn=(state.pickupName||'').toLowerCase(), dn=(state.dropoffName||'').toLowerCase();
       if(state.svc==='hourly') $bkDir.value='island';
@@ -1081,9 +1087,11 @@
 
     if($cta) $cta.addEventListener('click', openBooking);
   if($bkPay) $bkPay.addEventListener('click', pay);
+  if($bkPaxView) $bkPaxView.addEventListener('change', function(){ state.pax=parseInt(this.value,10)||1; state.veh=recommendVehicle(state.pax); recalc(); renderModalSummary(); });
   root.querySelectorAll('#rl-modal [data-close]').forEach(function(el){ el.addEventListener('click', closeBooking); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeBooking(); });
   buildDial();
+  buildBkPax();
 
   applyLang('en');
 
