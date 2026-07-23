@@ -658,38 +658,62 @@
 
       <!-- Wise panel -->
       <div id="pm-wise" style="display:none">
-        <div style="background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin-top:12px;text-align:center">
-          <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px" data-en="Send the exact amount in EUR to this Wise tag:" data-es="Envía el monto exacto en EUR a este tag de Wise:" data-fr="Envoyez le montant exact en EUR à ce tag Wise :" data-de="Senden Sie den genauen Betrag in EUR an dieses Wise-Tag:">Send the exact amount in EUR to this Wise tag:</p>
-          <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0">
-            <span style="font-size:1.15rem;font-weight:600;color:var(--teal);letter-spacing:.01em">@serendipitytravelexperiencesllc</span>
-            <button type="button" class="rl-copy-btn" data-copy="@serendipitytravelexperiencesllc" aria-label="Copy" style="background:var(--teal);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s">Copy</button>
+        <!-- Step 1: Reserve button -->
+        <div id="wise-step1">
+          <p class="rl-form-err" id="bk-err-wise"></p>
+          <button type="button" class="rl-btn rl-btn-dark" id="bk-reserve-wise" style="margin-top:14px" data-en="Reserve now — pay with Wise" data-es="Reservar ahora — pagar con Wise" data-fr="Réserver — payer avec Wise" data-de="Jetzt reservieren — mit Wise bezahlen">Reserve now — pay with Wise</button>
+          <p class="rl-form-secure" data-en="Your booking will be held for 1 hour while you complete the Wise payment." data-es="Tu reserva se mantendrá por 1 hora mientras completas el pago por Wise." data-fr="Votre réservation sera maintenue 1 heure le temps d’effectuer le paiement Wise." data-de="Ihre Reservierung wird 1 Stunde gehalten, während Sie die Wise-Zahlung abschließen.">Your booking will be held for 1 hour while you complete the Wise payment.</p>
+        </div>
+        <!-- Step 2: Payment instructions -->
+        <div id="wise-step2" style="display:none">
+          <div style="background:#046567;border-radius:12px;padding:20px 18px;margin-top:12px;text-align:center;color:#fff">
+            <p style="font-size:1rem;font-weight:600;margin-bottom:4px" data-en="✅ Booking received!" data-es="✅ ¡Reserva recibida!" data-fr="✅ Réservation reçue !" data-de="✅ Buchung erhalten!">✅ Booking received!</p>
+            <p style="font-size:.85rem;color:rgba(255,255,255,.8);margin-bottom:14px" data-en="Now complete your payment:" data-es="Ahora completa tu pago:" data-fr="Effectuez maintenant votre paiement :" data-de="Schließen Sie jetzt Ihre Zahlung ab:">Now complete your payment:</p>
+            <p style="font-size:.82rem;color:rgba(255,255,255,.7)" data-en="Send the exact amount in EUR to this Wise tag:" data-es="Envía el monto exacto en EUR a este tag de Wise:" data-fr="Envoyez le montant exact en EUR à ce tag Wise :" data-de="Senden Sie den genauen Betrag in EUR an dieses Wise-Tag:">Send the exact amount in EUR to this Wise tag:</p>
+            <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0">
+              <span style="font-size:1.2rem;font-weight:700;color:#fff">@serendipitytravelexperiencesllc</span>
+              <button type="button" class="rl-copy-btn" data-copy="@serendipitytravelexperiencesllc" aria-label="Copy" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer">Copy</button>
+            </div>
+            <p style="font-size:.95rem;font-weight:700;color:#fff;margin-top:6px" id="wise-amount"></p>
           </div>
-          <p style="font-size:.82rem;color:#c0392b;font-weight:600;margin-top:10px" data-en="⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled." data-es="⏰ El pago debe recibirse en un máximo de 1 hora o la reserva se cancelará automáticamente." data-fr="⏰ Le paiement doit être reçu dans l’heure, sinon la réservation sera automatiquement annulée." data-de="⏰ Die Zahlung muss innerhalb von 1 Stunde eingehen, sonst wird die Reservierung automatisch storniert.">⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled.</p>
-          <p style="font-size:.82rem;color:var(--muted);margin-top:10px" data-en="After sending, share your payment receipt via WhatsApp or email:" data-es="Después de enviar, comparte tu comprobante de pago por WhatsApp o correo:" data-fr="Après l’envoi, partagez votre reçu de paiement par WhatsApp ou e-mail :" data-de="Teilen Sie nach dem Senden Ihren Zahlungsbeleg per WhatsApp oder E-Mail:">After sending, share your payment receipt via WhatsApp or email:</p>
+          <p style="font-size:.82rem;color:#c0392b;font-weight:600;margin-top:12px;text-align:center" data-en="⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled." data-es="⏰ El pago debe recibirse en un máximo de 1 hora o la reserva se cancelará automáticamente." data-fr="⏰ Le paiement doit être reçu dans l’heure, sinon la réservation sera automatiquement annulée." data-de="⏰ Die Zahlung muss innerhalb von 1 Stunde eingehen, sonst wird die Reservierung automatisch storniert.">⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled.</p>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:10px;text-align:center" data-en="After sending, share your payment receipt via WhatsApp or email:" data-es="Después de enviar, comparte tu comprobante de pago por WhatsApp o correo:" data-fr="Après l’envoi, partagez votre reçu par WhatsApp ou e-mail :" data-de="Teilen Sie nach dem Senden Ihren Beleg per WhatsApp oder E-Mail:">After sending, share your payment receipt via WhatsApp or email:</p>
           <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;align-items:center">
             <span style="font-size:.9rem">📱 <a href="https://wa.me/529841386226" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:underline">WhatsApp</a></span>
             <span style="font-size:.9rem">📧 <a href="mailto:rafael@serendipitytravelexperiences.com" style="color:var(--teal);font-weight:600;text-decoration:underline">rafael@serendipitytravelexperiences.com</a></span>
           </div>
+          <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Send receipt on WhatsApp" data-es="Enviar comprobante por WhatsApp" data-fr="Envoyer le reçu sur WhatsApp" data-de="Beleg per WhatsApp senden">Send receipt on WhatsApp</button>
         </div>
-        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Send receipt on WhatsApp" data-es="Enviar comprobante por WhatsApp" data-fr="Envoyer le reçu sur WhatsApp" data-de="Beleg per WhatsApp senden">Send receipt on WhatsApp</button>
       </div>
 
       <!-- Revolut panel -->
       <div id="pm-revolut" style="display:none">
-        <div style="background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin-top:12px;text-align:center">
-          <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px" data-en="Send the exact amount in EUR to this Revolut tag:" data-es="Envía el monto exacto en EUR a este tag de Revolut:" data-fr="Envoyez le montant exact en EUR à ce tag Revolut :" data-de="Senden Sie den genauen Betrag in EUR an dieses Revolut-Tag:">Send the exact amount in EUR to this Revolut tag:</p>
-          <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0">
-            <span style="font-size:1.15rem;font-weight:600;color:var(--teal);letter-spacing:.01em">@rafaeldeemmanuel</span>
-            <button type="button" class="rl-copy-btn" data-copy="@rafaeldeemmanuel" aria-label="Copy" style="background:var(--teal);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s">Copy</button>
+        <!-- Step 1: Reserve button -->
+        <div id="rev-step1">
+          <p class="rl-form-err" id="bk-err-rev"></p>
+          <button type="button" class="rl-btn rl-btn-dark" id="bk-reserve-rev" style="margin-top:14px" data-en="Reserve now — pay with Revolut" data-es="Reservar ahora — pagar con Revolut" data-fr="Réserver — payer avec Revolut" data-de="Jetzt reservieren — mit Revolut bezahlen">Reserve now — pay with Revolut</button>
+          <p class="rl-form-secure" data-en="Your booking will be held for 1 hour while you complete the Revolut payment." data-es="Tu reserva se mantendrá por 1 hora mientras completas el pago por Revolut." data-fr="Votre réservation sera maintenue 1 heure le temps d’effectuer le paiement Revolut." data-de="Ihre Reservierung wird 1 Stunde gehalten, während Sie die Revolut-Zahlung abschließen.">Your booking will be held for 1 hour while you complete the Revolut payment.</p>
+        </div>
+        <!-- Step 2: Payment instructions -->
+        <div id="rev-step2" style="display:none">
+          <div style="background:#046567;border-radius:12px;padding:20px 18px;margin-top:12px;text-align:center;color:#fff">
+            <p style="font-size:1rem;font-weight:600;margin-bottom:4px" data-en="✅ Booking received!" data-es="✅ ¡Reserva recibida!" data-fr="✅ Réservation reçue !" data-de="✅ Buchung erhalten!">✅ Booking received!</p>
+            <p style="font-size:.85rem;color:rgba(255,255,255,.8);margin-bottom:14px" data-en="Now complete your payment:" data-es="Ahora completa tu pago:" data-fr="Effectuez maintenant votre paiement :" data-de="Schließen Sie jetzt Ihre Zahlung ab:">Now complete your payment:</p>
+            <p style="font-size:.82rem;color:rgba(255,255,255,.7)" data-en="Send the exact amount in EUR to this Revolut tag:" data-es="Envía el monto exacto en EUR a este tag de Revolut:" data-fr="Envoyez le montant exact en EUR à ce tag Revolut :" data-de="Senden Sie den genauen Betrag in EUR an dieses Revolut-Tag:">Send the exact amount in EUR to this Revolut tag:</p>
+            <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0">
+              <span style="font-size:1.2rem;font-weight:700;color:#fff">@rafaeldeemmanuel</span>
+              <button type="button" class="rl-copy-btn" data-copy="@rafaeldeemmanuel" aria-label="Copy" style="background:rgba(255,255,255,.2);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer">Copy</button>
+            </div>
+            <p style="font-size:.95rem;font-weight:700;color:#fff;margin-top:6px" id="rev-amount"></p>
           </div>
-          <p style="font-size:.82rem;color:#c0392b;font-weight:600;margin-top:10px" data-en="⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled." data-es="⏰ El pago debe recibirse en un máximo de 1 hora o la reserva se cancelará automáticamente." data-fr="⏰ Le paiement doit être reçu dans l’heure, sinon la réservation sera automatiquement annulée." data-de="⏰ Die Zahlung muss innerhalb von 1 Stunde eingehen, sonst wird die Reservierung automatisch storniert.">⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled.</p>
-          <p style="font-size:.82rem;color:var(--muted);margin-top:10px" data-en="After sending, share your payment receipt via WhatsApp or email:" data-es="Después de enviar, comparte tu comprobante de pago por WhatsApp o correo:" data-fr="Après l’envoi, partagez votre reçu de paiement par WhatsApp ou e-mail :" data-de="Teilen Sie nach dem Senden Ihren Zahlungsbeleg per WhatsApp oder E-Mail:">After sending, share your payment receipt via WhatsApp or email:</p>
+          <p style="font-size:.82rem;color:#c0392b;font-weight:600;margin-top:12px;text-align:center" data-en="⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled." data-es="⏰ El pago debe recibirse en un máximo de 1 hora o la reserva se cancelará automáticamente." data-fr="⏰ Le paiement doit être reçu dans l’heure, sinon la réservation sera automatiquement annulée." data-de="⏰ Die Zahlung muss innerhalb von 1 Stunde eingehen, sonst wird die Reservierung automatisch storniert.">⏰ Payment must be received within 1 hour or the reservation will be automatically cancelled.</p>
+          <p style="font-size:.82rem;color:var(--muted);margin-top:10px;text-align:center" data-en="After sending, share your payment receipt via WhatsApp or email:" data-es="Después de enviar, comparte tu comprobante de pago por WhatsApp o correo:" data-fr="Après l’envoi, partagez votre reçu par WhatsApp ou e-mail :" data-de="Teilen Sie nach dem Senden Ihren Beleg per WhatsApp oder E-Mail:">After sending, share your payment receipt via WhatsApp or email:</p>
           <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;align-items:center">
             <span style="font-size:.9rem">📱 <a href="https://wa.me/529841386226" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:underline">WhatsApp</a></span>
             <span style="font-size:.9rem">📧 <a href="mailto:rafael@serendipitytravelexperiences.com" style="color:var(--teal);font-weight:600;text-decoration:underline">rafael@serendipitytravelexperiences.com</a></span>
           </div>
+          <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Send receipt on WhatsApp" data-es="Enviar comprobante por WhatsApp" data-fr="Envoyer le reçu sur WhatsApp" data-de="Beleg per WhatsApp senden">Send receipt on WhatsApp</button>
         </div>
-        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Send receipt on WhatsApp" data-es="Enviar comprobante por WhatsApp" data-fr="Envoyer le reçu sur WhatsApp" data-de="Beleg per WhatsApp senden">Send receipt on WhatsApp</button>
       </div>
 
       <a class="rl-form-wa" id="bk-wa" href="#" rel="noopener" target="_blank" data-en="Prefer to book on WhatsApp?" data-es="¿Prefieres reservar por WhatsApp?" data-fr="Vous préférez WhatsApp ?" data-de="Lieber über WhatsApp buchen?">Prefer WhatsApp?</a>
@@ -995,51 +1019,67 @@
   });
 
   // ---- Wise/Revolut WhatsApp confirm buttons ----
+  // ---- Reserve buttons for Wise/Revolut (2-step flow) ----
+  function validateBkForm() {
+    var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
+    return !!(g('#bk-name') && g('#bk-email') && /.+@.+\..+/.test(g('#bk-email')) && g('#bk-phone') && g('#bk-date') && g('#bk-hour'));
+  }
+
+  function getBkPayload(method, tag) {
+    var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
+    var code=$bkCode?$bkCode.value:'';
+    var bkH=g('#bk-hour'),bkM=g('#bk-min'),bkAP=g('#bk-ampm');
+    var time=bkH?(bkH+':'+bkM+' '+bkAP):'';
+    var v=veh(state.veh), route;
+    if(state.svc==='hourly'){ route=v[lang]+' \u00b7 '+state.hours+'h'; }
+    else { var pk=state.pickupName||(T[lang].zone+state.from), dp=state.dropoffName||(T[lang].zone+state.to); var tt=state.trip==='round'?T[lang].roundtrip:T[lang].oneway; route=pk+' '+T[lang].to+' '+dp+', '+tt; }
+    return { name:g('#bk-name'), email:g('#bk-email'), phone:(code+' '+g('#bk-phone')).trim(), vehicle:v[lang], route:route, date:g('#bk-date'), time:time, flight:g('#bk-flight'), pax:state.pax, notes:g('#bk-notes'), direction:$bkDir?$bkDir.value:'', amount:lastTotal, method:method, tag:tag, lang:lang };
+  }
+
+  var BK_ERR={en:'Please fill in your name, a valid email, phone, date and time.',es:'Completa tu nombre, un correo v\u00e1lido, tel\u00e9fono, fecha y hora.',fr:'Remplissez nom, e-mail valide, t\u00e9l\u00e9phone, date et heure.',de:'Bitte Name, E-Mail, Telefon, Datum und Uhrzeit angeben.'};
+  var BK_PROC={en:'Processing...',es:'Procesando...',fr:'En cours...',de:'Wird verarbeitet...'};
+
+  function handleReserve(btn, errId, step1Id, step2Id, amtId, method, tag) {
+    btn.addEventListener('click', function(){
+      if(!validateBkForm()){ var e=root.querySelector(errId); if(e){e.style.color='#c0392b';e.textContent=BK_ERR[lang]||BK_ERR.en;} return; }
+      btn.setAttribute('disabled','disabled');
+      var origText=btn.textContent;
+      btn.textContent=BK_PROC[lang]||BK_PROC.en;
+      var payload=getBkPayload(method,tag);
+      fetch('/api/booking-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(function(r){ return r.json(); })
+        .then(function(){
+          root.querySelector(step1Id).style.display='none';
+          root.querySelector(step2Id).style.display='';
+          var a=root.querySelector(amtId); if(a) a.textContent='\u20ac'+lastTotal;
+        })
+        .catch(function(){
+          btn.removeAttribute('disabled'); btn.textContent=origText;
+          var e=root.querySelector(errId); if(e){e.style.color='#c0392b';e.textContent='Error. Please try again.';}
+        });
+    });
+  }
+
+  var bkRW=root.querySelector('#bk-reserve-wise');
+  if(bkRW) handleReserve(bkRW,'#bk-err-wise','#wise-step1','#wise-step2','#wise-amount','Wise','@serendipitytravelexperiencesllc');
+  var bkRR=root.querySelector('#bk-reserve-rev');
+  if(bkRR) handleReserve(bkRR,'#bk-err-rev','#rev-step1','#rev-step2','#rev-amount','Revolut','@rafaeldeemmanuel');
+
+  // ---- Send receipt on WhatsApp ----
   root.querySelectorAll('.rl-wa-confirm').forEach(function(b){
     b.addEventListener('click', function(){
       var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
-      var name=g('#bk-name'), email=g('#bk-email'), phone=g('#bk-phone'), code=$bkCode?$bkCode.value:'';
-      var date=g('#bk-date'), bkH=g('#bk-hour'), bkM=g('#bk-min'), bkAP=g('#bk-ampm');
+      var name=g('#bk-name'), v=veh(state.veh);
+      var pm=b.closest('#pm-wise')?'Wise':'Revolut';
+      var bkH=g('#bk-hour'),bkM=g('#bk-min'),bkAP=g('#bk-ampm');
       var time=bkH?(bkH+':'+bkM+' '+bkAP):'';
-      var flight=g('#bk-flight'), notes=g('#bk-notes'), dir=$bkDir?$bkDir.value:'';
-      var v=veh(state.veh);
-      var pm = b.closest('#pm-wise') ? 'Wise' : 'Revolut';
-      var tag = pm==='Wise' ? '@serendipitytravelexperiencesllc' : '@rafaeldeemmanuel';
-
-      // Validate
-      if(!name||!email||!/.+@.+\..+/.test(email)||!phone||!date||!bkH){
-        alert(lang==='es'?'Completa nombre, email, teléfono, fecha y hora.':lang==='fr'?'Remplissez nom, e-mail, téléphone, date et heure.':lang==='de'?'Bitte Name, E-Mail, Telefon, Datum und Uhrzeit angeben.':'Please fill in name, email, phone, date and time.');
-        return;
-      }
-
-      // Build route info
-      var route;
-      if(state.svc==='hourly'){ route=v[lang]+' · '+state.hours+'h'; }
-      else {
-        var pk=state.pickupName||(T[lang].zone+state.from), dp=state.dropoffName||(T[lang].zone+state.to);
-        var tripTxt=state.trip==='round'?T[lang].roundtrip:T[lang].oneway;
-        route=pk+' '+T[lang].to+' '+dp+', '+tripTxt;
-      }
-
-      // Send confirmation email to customer with receipt instructions
-      var payload = {
-        name:name, email:email, phone:(code+' '+phone).trim(),
-        vehicle:v[lang], route:route, date:date, time:time, flight:flight,
-        pax:state.pax, notes:notes, direction:dir,
-        amount:lastTotal, method:pm, tag:tag, lang:lang
-      };
-      fetch('/api/booking-email',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-        .then(function(r){ return r.json(); })
-        .then(function(d){ console.log('Email sent:', d); })
-        .catch(function(e){ console.error('Email error:', e); });
-
-      // Open WhatsApp
-      var msg = T[lang].bookintro + name + ', €' + lastTotal + ' ' + v[lang] + ', ' + state.pax + ' ' + T[lang].paxword + '. ' + route + '. Paid via ' + pm + '.';
-      window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg), '_blank');
+      var route; if(state.svc==='hourly'){route=v[lang]+' \u00b7 '+state.hours+'h';} else {var pk=state.pickupName||(T[lang].zone+state.from),dp=state.dropoffName||(T[lang].zone+state.to);route=pk+' \u2192 '+dp;}
+      var msg=T[lang].bookintro+name+', \u20ac'+lastTotal+' '+v[lang]+', '+state.pax+' '+T[lang].paxword+'. '+route+'. '+g('#bk-date')+' '+time+'. Paid via '+pm+'.';
+      window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
     });
   });
 
-  if($cta) $cta.addEventListener('click', openBooking);
+    if($cta) $cta.addEventListener('click', openBooking);
   if($bkPay) $bkPay.addEventListener('click', pay);
   root.querySelectorAll('#rl-modal [data-close]').forEach(function(el){ el.addEventListener('click', closeBooking); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeBooking(); });
