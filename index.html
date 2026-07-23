@@ -165,6 +165,12 @@
 .rl-ibiza #bk-pay{width:100%;margin-top:18px}
 .rl-ibiza #bk-pay[disabled]{opacity:.6;cursor:default}
 .rl-ibiza .rl-form-secure{font-size:.78rem;color:var(--muted);text-align:center;margin:12px 0 0}
+.rl-ibiza .rl-policy{background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:18px}
+.rl-ibiza .rl-policy-h{font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);margin:0 0 6px}
+.rl-ibiza .rl-policy-txt{font-size:.82rem;color:var(--muted);line-height:1.5;margin:0 0 12px}
+.rl-ibiza .rl-agree{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--ink);cursor:pointer}
+.rl-ibiza .rl-agree input{margin-top:1px;width:18px;height:18px;accent-color:var(--teal);flex-shrink:0;cursor:pointer}
+.rl-ibiza .rl-btn.rl-dim{opacity:.5}
 .rl-ibiza .rl-form-wa{display:block;text-align:center;margin-top:10px;color:var(--teal);font-size:.9rem;text-decoration:none}
 @media(max-width:540px){.rl-ibiza .rl-form{grid-template-columns:1fr}.rl-ibiza .rl-phone{grid-template-columns:120px 1fr}.rl-ibiza .rl-modal-card{padding:24px}}
 .rl-ibiza gmp-place-autocomplete{width:100%;display:block;border:1px solid var(--line);border-radius:12px;background:#fff;--gmp-mat-color-surface:#fff}
@@ -239,7 +245,7 @@
 .rl-ibiza .rl-faq-ic::after{left:10px;top:3px;bottom:3px;width:2px;transition:opacity .25s}
 .rl-ibiza .rl-faq-item.is-open .rl-faq-ic::after{opacity:0}
 .rl-ibiza .rl-faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.rl-ibiza .rl-faq-item.is-open .rl-faq-a{max-height:360px}
+.rl-ibiza .rl-faq-item.is-open .rl-faq-a{max-height:640px}
 .rl-ibiza .rl-faq-a p{padding:0 0 24px;color:var(--muted);font-size:1rem;line-height:1.6;max-width:64ch}
 @media(max-width:560px){ .rl-ibiza .rl-faq{padding:80px 0} }
 
@@ -406,7 +412,7 @@
 
         <div class="rl-calc-out">
           <p class="rl-calc-outlabel" data-en="Estimated price" data-es="Precio estimado" data-fr="Prix estimé" data-de="Geschätzter Preis">Estimated price</p>
-          <p class="rl-calc-price" id="rl-price">€125</p>
+          <p class="rl-calc-price" id="rl-price">€120</p>
           <p class="rl-calc-break" id="rl-break"></p>
           <button type="button" class="rl-btn rl-btn-dark" id="rl-cta" data-en="Book and pay" data-es="Reservar y pagar" data-fr="Réserver et payer" data-de="Buchen und bezahlen">Book and pay</button>
           <a class="rl-calc-wa" id="rl-cta-wa" href="#" rel="noopener" target="_blank" data-en="Or ask on WhatsApp" data-es="O pregunta por WhatsApp" data-fr="Ou demander sur WhatsApp" data-de="Oder per WhatsApp fragen">Or ask on WhatsApp</a>
@@ -510,7 +516,7 @@
             <span data-en="How much is a private transfer from Ibiza airport?" data-es="¿Cuánto cuesta un traslado privado desde el aeropuerto de Ibiza?" data-fr="Combien coûte un transfert privé depuis l’aéroport d’Ibiza ?" data-de="Was kostet ein privater Transfer vom Flughafen Ibiza?">How much is a private transfer from Ibiza airport?</span>
             <span class="rl-faq-ic" aria-hidden="true"></span>
           </button>
-          <div class="rl-faq-a"><p data-en="Private transfers start from €125 for a Mercedes V-Class to the central zone, taxes included. Use the calculator above for your exact route and vehicle." data-es="Los traslados privados inician desde €125 en Mercedes V-Class a la zona central, impuestos incluidos. Usa la calculadora de arriba para tu ruta y vehículo exactos." data-fr="Les transferts privés démarrent à 125 € pour une Mercedes V-Class vers la zone centrale, taxes incluses. Utilisez le calculateur ci-dessus pour votre trajet et véhicule exacts." data-de="Private Transfers beginnen bei 125 € für eine Mercedes V-Class in die zentrale Zone, inklusive Steuern. Nutzen Sie den Rechner oben für Ihre genaue Route und Ihr Fahrzeug.">Private transfers start from €125 for a Mercedes V-Class to the central zone, taxes included. Use the calculator above for your exact route and vehicle.</p></div>
+          <div class="rl-faq-a"><p data-en="Private transfers start from €120 for a Mercedes V-Class to the central zone, taxes included. Use the calculator above for your exact route and vehicle." data-es="Los traslados privados inician desde €120 en Mercedes V-Class a la zona central, impuestos incluidos. Usa la calculadora de arriba para tu ruta y vehículo exactos." data-fr="Les transferts privés démarrent à 120 € pour une Mercedes V-Class vers la zone centrale, taxes incluses. Utilisez le calculateur ci-dessus pour votre trajet et véhicule exacts." data-de="Private Transfers beginnen bei 120 € für eine Mercedes V-Class in die zentrale Zone, inklusive Steuern. Nutzen Sie den Rechner oben für Ihre genaue Route und Ihr Fahrzeug.">Private transfers start from €120 for a Mercedes V-Class to the central zone, taxes included. Use the calculator above for your exact route and vehicle.</p></div>
         </div>
 
         <div class="rl-faq-item">
@@ -577,6 +583,14 @@
           <div class="rl-faq-a"><p data-en="We recommend booking at least 24 to 48 hours ahead, especially in high season and on festival weekends. Last minute requests are welcome when we have availability." data-es="Recomendamos reservar al menos con 24 a 48 horas de anticipación, sobre todo en temporada alta y fines de semana de festival. Las solicitudes de último minuto son bienvenidas si hay disponibilidad." data-fr="Nous recommandons de réserver au moins 24 à 48 heures à l’avance, surtout en haute saison et lors des week-ends de festival. Les demandes de dernière minute sont les bienvenues selon les disponibilités." data-de="Wir empfehlen, mindestens 24 bis 48 Stunden im Voraus zu buchen, besonders in der Hochsaison und an Festival-Wochenenden. Last-Minute-Anfragen sind bei Verfügbarkeit willkommen.">We recommend booking at least 24 to 48 hours ahead, especially in high season and on festival weekends. Last minute requests are welcome when we have availability.</p></div>
         </div>
 
+        <div class="rl-faq-item">
+          <button class="rl-faq-q" type="button" aria-expanded="false">
+            <span data-en="What is your cancellation policy?" data-es="¿Cuál es la política de cancelación?" data-fr="Quelle est votre politique d’annulation ?" data-de="Wie lautet Ihre Stornierungsbedingung?">What is your cancellation policy?</span>
+            <span class="rl-faq-ic" aria-hidden="true"></span>
+          </button>
+          <div class="rl-faq-a"><p data-en="Cancellations more than 72 hours before the service are free. From 72 to 48 hours before: 20% charge. From 48 to 24 hours before: 50% charge. Less than 24 hours before the service: 100% charge. Courtesy waiting time is included, 60 minutes for airport pickups and 10 minutes for other pickups." data-es="Las cancelaciones con más de 72 horas de antelación son gratuitas. Entre 72 y 48 horas antes: cargo del 20%. Entre 48 y 24 horas antes: cargo del 50%. Con menos de 24 horas antes del servicio: cargo del 100%. Se incluye tiempo de cortesía de espera, 60 minutos en recogidas de aeropuerto y 10 minutos en las demás recogidas." data-fr="Les annulations plus de 72 heures avant le service sont gratuites. De 72 à 48 heures avant : 20% de frais. De 48 à 24 heures avant : 50% de frais. Moins de 24 heures avant le service : 100% de frais. Temps d’attente de courtoisie inclus, 60 minutes pour les prises en charge à l’aéroport et 10 minutes pour les autres." data-de="Stornierungen mehr als 72 Stunden vor dem Service sind kostenlos. Von 72 bis 48 Stunden vorher: 20% Gebühr. Von 48 bis 24 Stunden vorher: 50% Gebühr. Weniger als 24 Stunden vor dem Service: 100% Gebühr. Inklusive kostenloser Wartezeit, 60 Minuten bei Flughafenabholungen und 10 Minuten bei anderen Abholungen.">Cancellations more than 72 hours before the service are free. From 72 to 48 hours before: 20% charge. From 48 to 24 hours before: 50% charge. Less than 24 hours before the service: 100% charge. Courtesy waiting time is included, 60 minutes for airport pickups and 10 minutes for other pickups.</p></div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -641,6 +655,16 @@
         </label>
         <label class="wide"><span data-en="Notes (child seats, luggage, etc.)" data-es="Notas (sillas de niño, equipaje, etc.)" data-fr="Notes (sièges enfant, bagages, etc.)" data-de="Hinweise (Kindersitze, Gepäck usw.)">Notes</span><textarea id="bk-notes"></textarea></label>
       </div>
+
+      <div class="rl-policy">
+        <p class="rl-policy-h" data-en="Cancellation policy" data-es="Política de cancelación" data-fr="Politique d’annulation" data-de="Stornierungsbedingungen">Cancellation policy</p>
+        <p class="rl-policy-txt" data-en="Free more than 72h before the service. 72 to 48h before: 20%. 48 to 24h before: 50%. Less than 24h before: 100%." data-es="Gratis con más de 72h antes del servicio. De 72 a 48h antes: 20%. De 48 a 24h antes: 50%. Menos de 24h antes: 100%." data-fr="Gratuit plus de 72h avant le service. De 72 à 48h avant : 20%. De 48 à 24h avant : 50%. Moins de 24h avant : 100%." data-de="Kostenlos mehr als 72h vor dem Service. 72 bis 48h vorher: 20%. 48 bis 24h vorher: 50%. Weniger als 24h vorher: 100%.">Free more than 72h before the service. 72 to 48h before: 20%. 48 to 24h before: 50%. Less than 24h before: 100%.</p>
+        <label class="rl-agree">
+          <input type="checkbox" id="bk-agree">
+          <span data-en="I have read and accept the cancellation policy." data-es="He leído y acepto la política de cancelación." data-fr="J’ai lu et j’accepte la politique d’annulation." data-de="Ich habe die Stornierungsbedingungen gelesen und akzeptiere sie.">I have read and accept the cancellation policy.</span>
+        </label>
+      </div>
+
       <!-- Payment method selector -->
       <label class="wide" style="margin-top:8px"><span data-en="Payment method" data-es="Método de pago" data-fr="Mode de paiement" data-de="Zahlungsart">Payment method</span>
         <div class="rl-seg" id="rl-paymethod" role="group" style="margin-top:6px">
@@ -654,7 +678,7 @@
       <div id="pm-card">
         <p class="rl-form-err" id="bk-err"></p>
         <button type="button" class="rl-btn rl-btn-dark" id="bk-pay" data-en="Pay now" data-es="Pagar ahora" data-fr="Payer maintenant" data-de="Jetzt bezahlen">Pay now</button>
-        <p class="rl-form-secure" data-en="Secure payment by card, Apple Pay or Google Pay via Stripe. Free cancellation up to 48h before." data-es="Pago seguro con tarjeta, Apple Pay o Google Pay vía Stripe. Cancelación gratis hasta 48h antes." data-fr="Paiement sécurisé par carte, Apple Pay ou Google Pay via Stripe. Annulation gratuite jusqu’à 48h avant." data-de="Sichere Zahlung per Karte, Apple Pay oder Google Pay über Stripe. Kostenlose Stornierung bis 48h vorher.">Secure payment via Stripe.</p>
+        <p class="rl-form-secure" data-en="Secure payment by card, Apple Pay or Google Pay via Stripe. Free cancellation up to 72h before service." data-es="Pago seguro con tarjeta, Apple Pay o Google Pay vía Stripe. Cancelación gratis hasta 72h antes del servicio." data-fr="Paiement sécurisé par carte, Apple Pay ou Google Pay via Stripe. Annulation gratuite jusqu’à 72h avant le service." data-de="Sichere Zahlung per Karte, Apple Pay oder Google Pay über Stripe. Kostenlose Stornierung bis 72h vor dem Service.">Secure payment via Stripe.</p>
       </div>
 
       <!-- Wise panel -->
@@ -753,7 +777,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How much is a private transfer from Ibiza airport?","acceptedAnswer":{"@type":"Answer","text":"Private transfers start from 125 euros for a Mercedes V-Class to the central zone, taxes included."}},
+    {"@type":"Question","name":"How much is a private transfer from Ibiza airport?","acceptedAnswer":{"@type":"Answer","text":"Private transfers start from 120 euros for a Mercedes V-Class to the central zone, taxes included."}},
     {"@type":"Question","name":"How do I get from Ibiza airport to San Antonio or Playa d'en Bossa?","acceptedAnswer":{"@type":"Answer","text":"We provide a private door to door transfer in a chauffeured Mercedes. Pick your destination and book on WhatsApp in under a minute."}},
     {"@type":"Question","name":"Will you meet me at the airport?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your chauffeur waits at arrivals with a name board and helps with your luggage. Airport pickups include 60 minutes of free waiting time."}},
     {"@type":"Question","name":"How many people fit in the vehicles?","acceptedAnswer":{"@type":"Answer","text":"The Mercedes V-Class seats up to 7 guests with 6 large suitcases. The Mercedes Sprinter seats up to 12 guests with 12 large suitcases."}},
@@ -761,7 +785,8 @@
     {"@type":"Question","name":"Do you offer club and night transfers?","acceptedAnswer":{"@type":"Answer","text":"Yes. We handle transfers to Pacha, Hi, Ushuaia, Amnesia and every major venue, at any hour of the night."}},
     {"@type":"Question","name":"Do you provide child seats?","acceptedAnswer":{"@type":"Answer","text":"Yes, child seats and boosters are available on request. Just tell us the ages when you book."}},
     {"@type":"Question","name":"When should I leave for the airport?","acceptedAnswer":{"@type":"Answer","text":"We recommend leaving your accommodation at least 3 hours before your flight departure. This allows time for the transfer, check-in, security and any unexpected delays."}},
-    {"@type":"Question","name":"How far in advance should I book?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking at least 24 to 48 hours ahead, especially in high season and on festival weekends."}}
+    {"@type":"Question","name":"How far in advance should I book?","acceptedAnswer":{"@type":"Answer","text":"We recommend booking at least 24 to 48 hours ahead, especially in high season and on festival weekends."}},
+    {"@type":"Question","name":"What is your cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"Cancellations more than 72 hours before the service are free. From 72 to 48 hours before: 20% charge. From 48 to 24 hours before: 50% charge. Less than 24 hours before the service: 100% charge. Courtesy waiting time is included, 60 minutes for airport pickups and 10 minutes for other pickups."}}
   ]
 }
 </script>
@@ -776,7 +801,7 @@
      Prices are PROVIDER NET (tax included). Code adds your commission.
      ===================================================================== */
   var WA_NUMBER = '529841386226';
-  var MARKUP = 1.30;              // your commission: 1.30 = +30%
+  var MARKUP = 1.25;              // your commission: 1.25 = +25%
   var ROUND_TRIP_FACTOR = 2;     // round trip = this x one way
   var ROUND_TO = 5;              // round final price up to nearest
   var ZONE_RANK = {A:1, B:2, C:3, D:4};  // trip between zones charges the higher
@@ -833,7 +858,7 @@
   var $hours=root.querySelector('#rl-hours'), $price=root.querySelector('#rl-price'), $break=root.querySelector('#rl-break');
   var $cta=root.querySelector('#rl-cta'), $chips=root.querySelector('#rl-chips');
   var $wa=root.querySelector('#rl-cta-wa');
-  var $modal=root.querySelector('#rl-modal'), $mSum=root.querySelector('#rl-modal-sum'), $bkPay=root.querySelector('#bk-pay'), $bkErr=root.querySelector('#bk-err'), $bkWa=root.querySelector('#bk-wa'), $bkCode=root.querySelector('#bk-code'), $bkPaxView=root.querySelector('#bk-paxview'), $bkDir=root.querySelector('#bk-direction');
+  var $modal=root.querySelector('#rl-modal'), $mSum=root.querySelector('#rl-modal-sum'), $bkPay=root.querySelector('#bk-pay'), $bkErr=root.querySelector('#bk-err'), $bkWa=root.querySelector('#bk-wa'), $bkCode=root.querySelector('#bk-code'), $bkPaxView=root.querySelector('#bk-paxview'), $bkDir=root.querySelector('#bk-direction'), $bkAgree=root.querySelector('#bk-agree');
   var lastTotal=0;
   var $pickup=root.querySelector('#rl-pickup'), $dropoff=root.querySelector('#rl-dropoff');
   if($pickup) $pickup.value='Ibiza Airport (IBZ)';
@@ -980,7 +1005,10 @@
       else if(pn.indexOf('airport')>=0||pn.indexOf('aeropuerto')>=0||pn.indexOf('ibz')>=0) $bkDir.value='arrival';
       else if(dn.indexOf('airport')>=0||dn.indexOf('aeropuerto')>=0||dn.indexOf('ibz')>=0) $bkDir.value='departure';
     }
+    if($bkAgree) $bkAgree.checked=false;
+    updateAgreeGate();
     if($bkErr){ $bkErr.style.color=''; $bkErr.textContent=''; }
+    root.querySelectorAll('#rl-modal .rl-form-err').forEach(function(e){ e.textContent=''; });
     $modal.classList.add('is-open'); $modal.setAttribute('aria-hidden','false');
   }
   function closeBooking(){ if(!$modal) return; $modal.classList.remove('is-open'); $modal.setAttribute('aria-hidden','true'); }
@@ -1084,6 +1112,12 @@
       window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
     });
   });
+
+  function agreed(){ return $bkAgree ? $bkAgree.checked : true; }
+  function updateAgreeGate(){ ['#bk-pay','#bk-reserve-wise','#bk-reserve-rev'].forEach(function(sel){ var b=root.querySelector(sel); if(b) b.classList.toggle('rl-dim', !agreed()); }); }
+  var AGREE_MSG={en:'Please accept the cancellation policy to continue.',es:'Acepta la política de cancelación para continuar.',fr:'Veuillez accepter la politique d’annulation pour continuer.',de:'Bitte akzeptieren Sie die Stornierungsbedingungen, um fortzufahren.'};
+  ['#bk-pay','#bk-reserve-wise','#bk-reserve-rev'].forEach(function(sel){ var b=root.querySelector(sel); if(!b) return; b.addEventListener('click', function(e){ if(!agreed()){ e.stopImmediatePropagation(); e.preventDefault(); var err=(b.closest('#pm-card,#pm-wise,#pm-revolut')||b.parentNode).querySelector('.rl-form-err')||$bkErr; if(err){ err.style.color='#c0392b'; err.textContent=AGREE_MSG[lang]||AGREE_MSG.en; } } }, true); });
+  if($bkAgree) $bkAgree.addEventListener('change', function(){ updateAgreeGate(); if($bkAgree.checked){ root.querySelectorAll('#rl-modal .rl-form-err').forEach(function(e){ e.textContent=''; }); } });
 
     if($cta) $cta.addEventListener('click', openBooking);
   if($bkPay) $bkPay.addEventListener('click', pay);
