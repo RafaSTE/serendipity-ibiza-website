@@ -3,21 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/favicon.svg">
 <title>Ibiza Airport Transfers &amp; Private Chauffeur | Serendipity Travel Ibiza</title>
 <meta name="description" content="Luxury private airport transfers and chauffeured Mercedes transportation across Ibiza. Fixed fares by zone, club and yacht transfers, Formentera ferry, English speaking drivers, 24/7. Book on WhatsApp.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <!-- EDIT the URLs below to your final address (root domain or subdomain) -->
-<link rel="canonical" href="https://serendipitytravelibiza.com/">
+<link rel="canonical" href="https://www.serendipitytravelibiza.com/">
 <meta name="geo.region" content="ES-IB">
 <meta name="geo.placename" content="Ibiza, Balearic Islands">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Serendipity Travel Ibiza">
 <meta property="og:title" content="Ibiza Airport Transfers &amp; Private Chauffeur | Serendipity Travel Ibiza">
 <meta property="og:description" content="Private chauffeured Mercedes transportation across Ibiza. Fixed fares by zone, club and yacht transfers, Formentera ferry, 24/7.">
-<meta property="og:url" content="https://serendipitytravelibiza.com/">
-<meta property="og:image" content="https://serendipitytravelibiza.com/hero.jpg">
+<meta property="og:url" content="https://www.serendipitytravelibiza.com/">
+<meta property="og:image" content="https://www.serendipitytravelibiza.com/hero.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="fr_FR">
@@ -25,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ibiza Airport Transfers &amp; Private Chauffeur | Serendipity Travel Ibiza">
 <meta name="twitter:description" content="Private chauffeured Mercedes transportation across Ibiza. Fixed fares, club and yacht transfers, Formentera ferry.">
-<meta name="twitter:image" content="https://serendipitytravelibiza.com/hero.jpg">
+<meta name="twitter:image" content="https://www.serendipitytravelibiza.com/hero.jpg">
 
 <!-- ============================================================
      SERENDIPITY TRAVEL IBIZA  ·  serendipitytravelibiza.com
@@ -74,11 +72,12 @@
 .rl-ibiza .rl-nav-in{max-width:1040px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between}
 .rl-ibiza .rl-logo{font-family:var(--serif);font-size:1.05rem;font-weight:500;letter-spacing:.1em;color:var(--ink)}
 .rl-ibiza .rl-logo span{font-weight:400;font-style:italic;letter-spacing:.02em;color:var(--teal);margin-left:.3em}
-.rl-ibiza .rl-lang{display:inline-flex;align-items:center;gap:6px}
-.rl-ibiza .rl-lang button{padding:4px;line-height:0;border-radius:4px;transition:opacity .2s,box-shadow .2s;opacity:.5}
+.rl-ibiza .rl-lang{display:inline-flex;align-items:center;gap:9px}
+.rl-ibiza .rl-lang button{padding:0;line-height:0;opacity:.5;transition:opacity .2s}
+.rl-ibiza .rl-lang button svg{width:22px;height:15px;border-radius:3px;display:block;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.rl-ibiza .rl-lang button.is-active svg{box-shadow:0 0 0 1.5px var(--teal)}
 .rl-ibiza .rl-lang button:hover{opacity:.85}
-.rl-ibiza .rl-lang button.is-active{opacity:1;box-shadow:0 0 0 2px var(--teal)}
-.rl-ibiza .rl-lang button svg{width:24px;height:18px;border-radius:3px;display:block}
+.rl-ibiza .rl-lang button.is-active{opacity:1}
 
 /* BUTTONS */
 .rl-ibiza .rl-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:2rem}
@@ -131,18 +130,42 @@
 /* CALCULATOR */
 .rl-ibiza .rl-rates{background:radial-gradient(rgba(4,101,103,.05) 1px, transparent 1.6px) 0 0/30px 30px, radial-gradient(80% 60% at 50% -6%, rgba(4,101,103,.06), transparent 55%), var(--gray);padding:118px 0;text-align:center}
 .rl-ibiza .rl-rate-note{margin:.9rem auto 0;max-width:54ch;font-size:1rem;color:var(--muted)}
-.rl-ibiza .rl-calc{max-width:680px;margin:50px auto 0;background:transparent;border:none;border-radius:0;padding:0;text-align:left;box-shadow:none}
+.rl-ibiza .rl-calc{max-width:680px;margin:40px auto 0;padding:0;text-align:left}
 .rl-ibiza .rl-calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .rl-ibiza .rl-field{display:flex;flex-direction:column;gap:8px}
 .rl-ibiza .rl-field--wide{grid-column:1/-1}
 .rl-ibiza .rl-field > span{font-size:.74rem;font-weight:500;color:var(--muted)}
-.rl-ibiza .rl-field select{appearance:none;-webkit-appearance:none;width:100%;padding:13px 40px 13px 15px;font-size:1rem;font-weight:500;color:var(--ink);background-color:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .2s;box-shadow:0 2px 8px rgba(0,0,0,.06);
+.rl-ibiza .rl-field select{appearance:none;-webkit-appearance:none;width:100%;padding:13px 40px 13px 15px;font-size:1rem;font-weight:500;color:var(--ink);background-color:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .2s;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2386868b' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center}
 .rl-ibiza .rl-field select:focus{outline:none;border-color:var(--teal)}
 .rl-ibiza .rl-field input.rl-input{width:100%;padding:13px 15px;font-size:1rem;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:12px;transition:border-color .2s}
 .rl-ibiza .rl-field input.rl-input::placeholder{color:#a7a7ac;font-weight:400}
 .rl-ibiza .rl-field input.rl-input:focus{outline:none;border-color:var(--teal)}
 .rl-ibiza .rl-pac{width:100%}
+.rl-ibiza .rl-calc-wa{display:inline-block;margin-top:14px;color:var(--teal);font-size:.9rem;text-decoration:none;font-weight:500}
+.rl-ibiza .rl-calc-wa:hover{text-decoration:underline}
+.rl-ibiza .rl-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto}
+.rl-ibiza .rl-modal.is-open{display:flex}
+.rl-ibiza .rl-modal-bg{position:fixed;inset:0;background:rgba(0,17,19,.55)}
+.rl-ibiza .rl-modal-card{position:relative;z-index:1;background:#fff;max-width:540px;width:100%;border-radius:20px;padding:34px;margin:auto;box-shadow:0 30px 80px rgba(0,0,0,.32)}
+.rl-ibiza .rl-modal-x{position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.8rem;line-height:1;color:var(--muted);cursor:pointer}
+.rl-ibiza .rl-modal-h{font-family:var(--serif);font-size:1.75rem;font-weight:500;margin:.15rem 0 1rem}
+.rl-ibiza .rl-modal-sum{background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.94rem;line-height:1.5;margin-bottom:20px}
+.rl-ibiza .rl-modal-sum b{font-weight:600}
+.rl-ibiza .rl-modal-price{float:right;font-weight:700;color:var(--teal)}
+.rl-ibiza .rl-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rl-ibiza .rl-form label{display:flex;flex-direction:column;gap:6px;font-size:.72rem;font-weight:500;color:var(--muted)}
+.rl-ibiza .rl-form label.wide{grid-column:1/-1}
+.rl-ibiza .rl-form input,.rl-ibiza .rl-form select,.rl-ibiza .rl-form textarea{padding:12px 14px;font-size:1rem;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;font-family:inherit;width:100%}
+.rl-ibiza .rl-form input:focus,.rl-ibiza .rl-form select:focus,.rl-ibiza .rl-form textarea:focus{outline:none;border-color:var(--teal)}
+.rl-ibiza .rl-form textarea{min-height:64px;resize:vertical}
+.rl-ibiza .rl-phone{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:14px}
+.rl-ibiza .rl-form-err{color:#c0392b;font-size:.9rem;margin:12px 0 0;min-height:1em}
+.rl-ibiza #bk-pay{width:100%;margin-top:18px}
+.rl-ibiza #bk-pay[disabled]{opacity:.6;cursor:default}
+.rl-ibiza .rl-form-secure{font-size:.78rem;color:var(--muted);text-align:center;margin:12px 0 0}
+.rl-ibiza .rl-form-wa{display:block;text-align:center;margin-top:10px;color:var(--teal);font-size:.9rem;text-decoration:none}
+@media(max-width:540px){.rl-ibiza .rl-form{grid-template-columns:1fr}.rl-ibiza .rl-phone{grid-template-columns:120px 1fr}.rl-ibiza .rl-modal-card{padding:24px}}
 .rl-ibiza gmp-place-autocomplete{width:100%;display:block;border:1px solid var(--line);border-radius:12px;background:#fff;--gmp-mat-color-surface:#fff}
 .rl-ibiza gmp-place-autocomplete:focus-within{border-color:var(--teal)}
 .pac-container{border-radius:12px;border:1px solid #d2d2d7;box-shadow:0 12px 34px rgba(0,0,0,.14);font-family:'DM Sans',-apple-system,sans-serif;margin-top:6px;overflow:hidden;z-index:99999}
@@ -240,10 +263,6 @@
 
 /* RESPONSIVE */
 @media(max-width:900px){ .rl-ibiza .rl-grid3{grid-template-columns:1fr 1fr;gap:0 40px} }
-@media(max-width:760px){
-  .rl-ibiza .rl-grid2{grid-template-columns:1fr}
-  .rl-ibiza .rl-vcard-img{height:200px}
-}
 @media(max-width:560px){
   .rl-ibiza .rl-hero{min-height:82vh;padding:70px 22px}
   .rl-ibiza .rl-fleet,.rl-ibiza .rl-rates,.rl-ibiza .rl-vip{padding:80px 0}
@@ -251,8 +270,6 @@
   .rl-ibiza .rl-btn{width:100%;min-width:0}
   .rl-ibiza .rl-cta{flex-direction:column}
   .rl-ibiza .rl-calc{padding:0}
-  .rl-ibiza .rl-vcard-img{height:180px}
-  .rl-ibiza .rl-gal-img{aspect-ratio:4/3}
 }
 @media(prefers-reduced-motion:reduce){
   .rl-ibiza *{transition:none!important;animation:none!important}
@@ -267,10 +284,10 @@
     <div class="rl-nav-in">
       <div class="rl-logo">SERENDIPITY <span>Ibiza</span></div>
       <div class="rl-lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" class="is-active" aria-pressed="true" title="English"><svg viewBox="0 0 60 30"><clipPath id="gb"><rect width="60" height="30"/></clipPath><g clip-path="url(#gb)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#gb)"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#C8102E" stroke-width="6"/></g></svg></button>
-        <button type="button" data-lang="es" aria-pressed="false" title="Español"><svg viewBox="0 0 750 500"><rect width="750" height="500" fill="#AA151B"/><rect y="125" width="750" height="250" fill="#F1BF00"/></svg></button>
-        <button type="button" data-lang="fr" aria-pressed="false" title="Français"><svg viewBox="0 0 3 2"><rect width="1" height="2" fill="#002395"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ED2939"/></svg></button>
-        <button type="button" data-lang="de" aria-pressed="false" title="Deutsch"><svg viewBox="0 0 5 3"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></button>
+        <button type="button" data-lang="en" class="is-active" aria-pressed="true" aria-label="English"><svg viewBox="0 0 60 40" preserveAspectRatio="none" aria-hidden="true"><clipPath id="fuk"><rect width="60" height="40"/></clipPath><g clip-path="url(#fuk)"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="12"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="7"/></g></svg></button>
+        <button type="button" data-lang="es" aria-pressed="false" aria-label="Español"><svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="3" height="2" fill="#AA151B"/><rect y="0.5" width="3" height="1" fill="#F1BF00"/></svg></button>
+        <button type="button" data-lang="fr" aria-pressed="false" aria-label="Français"><svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055A4"/><rect x="2" width="1" height="2" fill="#EF4135"/></svg></button>
+        <button type="button" data-lang="de" aria-pressed="false" aria-label="Deutsch"><svg viewBox="0 0 3 2" preserveAspectRatio="none" aria-hidden="true"><rect width="3" height="2" fill="#FFCE00"/><rect width="3" height="1.333" fill="#DD0000"/><rect width="3" height="0.667" fill="#000"/></svg></button>
       </div>
     </div>
   </nav>
@@ -319,16 +336,6 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="rl-stats">
-    <div class="rl-stats-grid rl-reveal">
-      <div><p class="rl-stat-n" data-count="45000" data-suffix="+">0</p><p class="rl-stat-l" data-en="Guests moved" data-es="Pasajeros movidos" data-fr="Clients transportés" data-de="Beförderte Gäste">Guests moved</p></div>
-      <div><p class="rl-stat-n">24/7</p><p class="rl-stat-l" data-en="Every day, any hour" data-es="Todos los días, a toda hora" data-fr="Chaque jour, à toute heure" data-de="Jeden Tag, zu jeder Stunde">Every day, any hour</p></div>
-      <div><p class="rl-stat-n" data-count="4">0</p><p class="rl-stat-l" data-en="Zones, island-wide" data-es="Zonas, toda la isla" data-fr="Zones, toute l’île" data-de="Zonen, inselweit">Zones, island-wide</p></div>
-      <div><p class="rl-stat-n" data-count="3">0</p><p class="rl-stat-l" data-en="Languages" data-es="Idiomas" data-fr="Langues" data-de="Sprachen">Languages</p></div>
-    </div>
-  </section>
-
   <!-- LIFESTYLE BAND -->
   <section class="rl-life">
     <div class="rl-life-in rl-reveal">
@@ -346,8 +353,13 @@
 
       <div class="rl-calc">
         <div class="rl-calc-grid">
-          <label class="rl-field rl-field--wide">
-            <span data-en="Vehicle" data-es="Vehículo" data-fr="Véhicule" data-de="Fahrzeug">Vehicle</span>
+          <label class="rl-field">
+            <span data-en="Passengers" data-es="Pasajeros" data-fr="Passagers" data-de="Personen">Passengers</span>
+            <select id="rl-pax" aria-label="Passengers"></select>
+          </label>
+
+          <label class="rl-field">
+            <span data-en="Recommended vehicle" data-es="Vehículo recomendado" data-fr="Véhicule recommandé" data-de="Empfohlenes Fahrzeug">Recommended vehicle</span>
             <select id="rl-veh" aria-label="Vehicle"></select>
           </label>
 
@@ -395,7 +407,8 @@
           <p class="rl-calc-outlabel" data-en="Estimated price" data-es="Precio estimado" data-fr="Prix estimé" data-de="Geschätzter Preis">Estimated price</p>
           <p class="rl-calc-price" id="rl-price">€125</p>
           <p class="rl-calc-break" id="rl-break"></p>
-          <a class="rl-btn rl-btn-dark" id="rl-cta" href="#" rel="noopener" target="_blank" data-en="Book this on WhatsApp" data-es="Reservar esto por WhatsApp" data-fr="Réserver sur WhatsApp" data-de="Auf WhatsApp buchen">Book this on WhatsApp</a>
+          <button type="button" class="rl-btn rl-btn-dark" id="rl-cta" data-en="Book and pay" data-es="Reservar y pagar" data-fr="Réserver et payer" data-de="Buchen und bezahlen">Book and pay</button>
+          <a class="rl-calc-wa" id="rl-cta-wa" href="#" rel="noopener" target="_blank" data-en="Or ask on WhatsApp" data-es="O pregunta por WhatsApp" data-fr="Ou demander sur WhatsApp" data-de="Oder per WhatsApp fragen">Or ask on WhatsApp</a>
         </div>
       </div>
 
@@ -576,17 +589,91 @@
   <footer class="rl-foot">
     <strong>Serendipity Travel Ibiza</strong> · part of Serendipity Travel Experiences
   </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="rl-modal" id="rl-modal" aria-hidden="true">
+    <div class="rl-modal-bg" data-close></div>
+    <div class="rl-modal-card" role="dialog" aria-modal="true" aria-labelledby="rl-modal-title">
+      <button class="rl-modal-x" type="button" data-close aria-label="Close">&times;</button>
+      <p class="rl-eyebrow" data-en="Booking" data-es="Reserva" data-fr="Réservation" data-de="Buchung">Booking</p>
+      <h3 class="rl-modal-h" id="rl-modal-title" data-en="Complete your booking" data-es="Completa tu reserva" data-fr="Finalisez votre réservation" data-de="Buchung abschließen">Complete your booking</h3>
+      <div class="rl-modal-sum" id="rl-modal-sum"></div>
+      <div class="rl-form">
+        <label class="wide"><span data-en="Full name" data-es="Nombre completo" data-fr="Nom complet" data-de="Vollständiger Name">Full name</span><input id="bk-name" type="text" autocomplete="name"></label>
+        <label class="wide"><span data-en="Email" data-es="Correo electrónico" data-fr="E-mail" data-de="E-Mail">Email</span><input id="bk-email" type="email" autocomplete="email"></label>
+        <div class="rl-phone">
+          <label><span data-en="Code" data-es="Prefijo" data-fr="Indicatif" data-de="Vorwahl">Code</span><select id="bk-code" aria-label="Country code"></select></label>
+          <label><span data-en="Phone / WhatsApp" data-es="Teléfono / WhatsApp" data-fr="Téléphone / WhatsApp" data-de="Telefon / WhatsApp">Phone / WhatsApp</span><input id="bk-phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label class="wide"><span data-en="Trip type" data-es="Tipo de traslado" data-fr="Type de trajet" data-de="Art der Fahrt">Trip type</span>
+          <select id="bk-direction">
+            <option value="arrival" data-en="Airport arrival" data-es="Llegada al aeropuerto" data-fr="Arrivée aéroport" data-de="Ankunft Flughafen">Airport arrival</option>
+            <option value="departure" data-en="Airport departure" data-es="Salida al aeropuerto" data-fr="Départ aéroport" data-de="Abflug Flughafen">Airport departure</option>
+            <option value="island" data-en="Within the island" data-es="Traslado en la isla" data-fr="Sur l’île" data-de="Auf der Insel">Within the island</option>
+          </select>
+        </label>
+        <label><span data-en="Flight number" data-es="Número de vuelo" data-fr="Numéro de vol" data-de="Flugnummer">Flight number</span><input id="bk-flight" type="text" placeholder="—"></label>
+        <label><span data-en="Passengers" data-es="Pasajeros" data-fr="Passagers" data-de="Personen">Passengers</span><input id="bk-paxview" type="text" readonly></label>
+        <label><span data-en="Date" data-es="Fecha" data-fr="Date" data-de="Datum">Date</span><input id="bk-date" type="date"></label>
+        <label><span data-en="Time" data-es="Time" data-fr="Heure" data-de="Uhrzeit">Time</span><input id="bk-time" type="time"></label>
+        <label class="wide"><span data-en="Notes (child seats, luggage, etc.)" data-es="Notas (sillas de niño, equipaje, etc.)" data-fr="Notes (sièges enfant, bagages, etc.)" data-de="Hinweise (Kindersitze, Gepäck usw.)">Notes</span><textarea id="bk-notes"></textarea></label>
+      </div>
+      <!-- Payment method selector -->
+      <label class="wide" style="margin-top:8px"><span data-en="Payment method" data-es="Método de pago" data-fr="Mode de paiement" data-de="Zahlungsart">Payment method</span>
+        <div class="rl-seg" id="rl-paymethod" role="group" style="margin-top:6px">
+          <button type="button" data-pm="card" class="is-active">💳 Card</button>
+          <button type="button" data-pm="wise">Wise</button>
+          <button type="button" data-pm="revolut">Revolut</button>
+        </div>
+      </label>
+
+      <!-- Card (Stripe) panel -->
+      <div id="pm-card">
+        <p class="rl-form-err" id="bk-err"></p>
+        <button type="button" class="rl-btn rl-btn-dark" id="bk-pay" data-en="Pay now" data-es="Pagar ahora" data-fr="Payer maintenant" data-de="Jetzt bezahlen">Pay now</button>
+        <p class="rl-form-secure" data-en="Secure payment by card, Apple Pay or Google Pay via Stripe. Free cancellation up to 48h before." data-es="Pago seguro con tarjeta, Apple Pay o Google Pay vía Stripe. Cancelación gratis hasta 48h antes." data-fr="Paiement sécurisé par carte, Apple Pay ou Google Pay via Stripe. Annulation gratuite jusqu’à 48h avant." data-de="Sichere Zahlung per Karte, Apple Pay oder Google Pay über Stripe. Kostenlose Stornierung bis 48h vorher.">Secure payment via Stripe.</p>
+      </div>
+
+      <!-- Wise panel -->
+      <div id="pm-wise" style="display:none">
+        <div style="background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin-top:12px;text-align:center">
+          <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px" data-en="Send the exact amount in EUR to this Wise tag:" data-es="Envía el monto exacto en EUR a este tag de Wise:" data-fr="Envoyez le montant exact en EUR à ce tag Wise :" data-de="Senden Sie den genauen Betrag in EUR an dieses Wise-Tag:">Send the exact amount in EUR to this Wise tag:</p>
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0">
+            <span style="font-size:1.15rem;font-weight:600;color:var(--teal);letter-spacing:.01em">@serendipitytravelexperiencesllc</span>
+            <button type="button" class="rl-copy-btn" data-copy="@serendipitytravelexperiencesllc" aria-label="Copy" style="background:var(--teal);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s">Copy</button>
+          </div>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:8px" data-en="After sending, share the payment confirmation via WhatsApp so we can confirm your booking." data-es="Después de enviar, comparte la confirmación de pago por WhatsApp para confirmar tu reserva." data-fr="Après l’envoi, partagez la confirmation de paiement via WhatsApp." data-de="Teilen Sie nach dem Senden die Zahlungsbestätigung über WhatsApp.">After sending, share the payment confirmation via WhatsApp so we can confirm your booking.</p>
+        </div>
+        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Confirm on WhatsApp" data-es="Confirmar por WhatsApp" data-fr="Confirmer sur WhatsApp" data-de="Auf WhatsApp bestätigen">Confirm on WhatsApp</button>
+      </div>
+
+      <!-- Revolut panel -->
+      <div id="pm-revolut" style="display:none">
+        <div style="background:var(--gray);border:1px solid var(--line);border-radius:12px;padding:18px 16px;margin-top:12px;text-align:center">
+          <p style="font-size:.82rem;color:var(--muted);margin-bottom:6px" data-en="Send the exact amount in EUR to this Revolut tag:" data-es="Envía el monto exacto en EUR a este tag de Revolut:" data-fr="Envoyez le montant exact en EUR à ce tag Revolut :" data-de="Senden Sie den genauen Betrag in EUR an dieses Revolut-Tag:">Send the exact amount in EUR to this Revolut tag:</p>
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0">
+            <span style="font-size:1.15rem;font-weight:600;color:var(--teal);letter-spacing:.01em">@rafaeldeemmanuel</span>
+            <button type="button" class="rl-copy-btn" data-copy="@rafaeldeemmanuel" aria-label="Copy" style="background:var(--teal);color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s">Copy</button>
+          </div>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:8px" data-en="After sending, share the payment confirmation via WhatsApp so we can confirm your booking." data-es="Después de enviar, comparte la confirmación de pago por WhatsApp para confirmar tu reserva." data-fr="Après l’envoi, partagez la confirmation de paiement via WhatsApp." data-de="Teilen Sie nach dem Senden die Zahlungsbestätigung über WhatsApp.">After sending, share the payment confirmation via WhatsApp so we can confirm your booking.</p>
+        </div>
+        <button type="button" class="rl-btn rl-btn-dark rl-wa-confirm" style="margin-top:14px" data-en="Confirm on WhatsApp" data-es="Confirmar por WhatsApp" data-fr="Confirmer sur WhatsApp" data-de="Auf WhatsApp bestätigen">Confirm on WhatsApp</button>
+      </div>
+
+      <a class="rl-form-wa" id="bk-wa" href="#" rel="noopener" target="_blank" data-en="Prefer to book on WhatsApp?" data-es="¿Prefieres reservar por WhatsApp?" data-fr="Vous préférez WhatsApp ?" data-de="Lieber über WhatsApp buchen?">Prefer WhatsApp?</a>
+    </div>
+  </div>
 </div>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://serendipitytravelibiza.com/#business",
+  "@id": "https://www.serendipitytravelibiza.com/#business",
   "name": "Serendipity Travel Ibiza",
   "description": "Private airport transfers and chauffeured Mercedes transportation across Ibiza. Fixed fares by zone, club and nightlife transfers, yacht and marina transfers, Formentera ferry coordination and hourly chauffeur hire.",
-  "url": "https://serendipitytravelibiza.com/",
-  "image": "https://serendipitytravelibiza.com/hero.jpg",
+  "url": "https://www.serendipitytravelibiza.com/",
+  "image": "https://www.serendipitytravelibiza.com/hero.jpg",
   "telephone": "+529841386226",
   "email": "rafael@serendipitytravelexperiences.com",
   "priceRange": "€€€",
@@ -643,6 +730,10 @@
       transfer:{A:150, B:160, C:170, D:180}, hourly:{4:450, 8:780, 12:990, 24:1650}}
   ];
   var HOURS = [4, 8, 12, 24];
+  var VCLASS_MAX = 7;            // V-Class fits up to 7
+  var PAX_MAX = 12;             // Sprinter fits up to 12
+  var PAX_LIST = [];            // 1..12
+  for(var _p=1; _p<=PAX_MAX; _p++){ PAX_LIST.push(_p); }
 
   var ZONES = [
     {id:'A', en:'Zone A · Ibiza, Bossa, Jesús', es:'Zona A · Ibiza, Bossa, Jesús', fr:'Zone A · Ibiza, Bossa, Jesús', de:'Zone A · Ibiza, Bossa, Jesús'},
@@ -672,22 +763,26 @@
      LOGIC  ·  no need to edit below
      ===================================================================== */
   var T={
-    en:{oneway:'one way',roundtrip:'round trip',hours:'hours',zone:'Zone ',to:'to',byhour:'by the hour, ',bookintro:'Hi Serendipity Travel Ibiza, I would like to book. ',est:'Estimate',hero:"Hi Serendipity Travel Ibiza, I'd like a transfer quote for Ibiza."},
-    es:{oneway:'solo ida',roundtrip:'redondo',hours:'horas',zone:'Zona ',to:'a',byhour:'por horas, ',bookintro:'Hola Serendipity Travel Ibiza, quiero reservar. ',est:'Estimado',hero:'Hola Serendipity Travel Ibiza, quiero cotizar un traslado en Ibiza.'},
-    fr:{oneway:'aller simple',roundtrip:'aller-retour',hours:'heures',zone:'Zone ',to:'à',byhour:'à l\'heure, ',bookintro:'Bonjour Serendipity Travel Ibiza, je souhaite réserver. ',est:'Estimation',hero:'Bonjour Serendipity Travel Ibiza, je souhaite un devis de transfert à Ibiza.'},
-    de:{oneway:'einfache Fahrt',roundtrip:'Hin- und Rückfahrt',hours:'Stunden',zone:'Zone ',to:'nach',byhour:'stundenweise, ',bookintro:'Hallo Serendipity Travel Ibiza, ich möchte buchen. ',est:'Geschätzt',hero:'Hallo Serendipity Travel Ibiza, ich möchte ein Transfer-Angebot für Ibiza.'}
+    en:{oneway:'one way',roundtrip:'round trip',hours:'hours',zone:'Zone ',to:'to',byhour:'by the hour, ',bookintro:'Hi Serendipity Travel Ibiza, I would like to book. ',est:'Estimate',paxword:'passengers',forw:'for',hero:"Hi Serendipity Travel Ibiza, I'd like a transfer quote for Ibiza."},
+    es:{oneway:'solo ida',roundtrip:'redondo',hours:'horas',zone:'Zona ',to:'a',byhour:'por horas, ',bookintro:'Hola Serendipity Travel Ibiza, quiero reservar. ',est:'Estimado',paxword:'pasajeros',forw:'para',hero:'Hola Serendipity Travel Ibiza, quiero cotizar un traslado en Ibiza.'},
+    fr:{oneway:'aller simple',roundtrip:'aller-retour',hours:'heures',zone:'Zone ',to:'à',byhour:'à l\'heure, ',bookintro:'Bonjour Serendipity Travel Ibiza, je souhaite réserver. ',est:'Estimation',paxword:'passagers',forw:'pour',hero:'Bonjour Serendipity Travel Ibiza, je souhaite un devis de transfert à Ibiza.'},
+    de:{oneway:'einfache Fahrt',roundtrip:'Hin- und Rückfahrt',hours:'Stunden',zone:'Zone ',to:'nach',byhour:'stundenweise, ',bookintro:'Hallo Serendipity Travel Ibiza, ich möchte buchen. ',est:'Geschätzt',paxword:'Personen',forw:'für',hero:'Hallo Serendipity Travel Ibiza, ich möchte ein Transfer-Angebot für Ibiza.'}
   };
   var lang='en';
-  var state={veh:'vclass', svc:'transfer', from:'A', to:'A', trip:'oneway', hours:4, pickupName:'Ibiza Airport (IBZ)', dropoffName:''};
+  var state={veh:'vclass', pax:2, svc:'transfer', from:'A', to:'A', trip:'oneway', hours:4, pickupName:'Ibiza Airport (IBZ)', dropoffName:''};
 
-  var $veh=root.querySelector('#rl-veh'), $from=root.querySelector('#rl-from'), $to=root.querySelector('#rl-to');
+  var $veh=root.querySelector('#rl-veh'), $pax=root.querySelector('#rl-pax'), $from=root.querySelector('#rl-from'), $to=root.querySelector('#rl-to');
   var $hours=root.querySelector('#rl-hours'), $price=root.querySelector('#rl-price'), $break=root.querySelector('#rl-break');
   var $cta=root.querySelector('#rl-cta'), $chips=root.querySelector('#rl-chips');
+  var $wa=root.querySelector('#rl-cta-wa');
+  var $modal=root.querySelector('#rl-modal'), $mSum=root.querySelector('#rl-modal-sum'), $bkPay=root.querySelector('#bk-pay'), $bkErr=root.querySelector('#bk-err'), $bkWa=root.querySelector('#bk-wa'), $bkCode=root.querySelector('#bk-code'), $bkPaxView=root.querySelector('#bk-paxview'), $bkDir=root.querySelector('#bk-direction');
+  var lastTotal=0;
   var $pickup=root.querySelector('#rl-pickup'), $dropoff=root.querySelector('#rl-dropoff');
   if($pickup) $pickup.value='Ibiza Airport (IBZ)';
 
   function zoneLabel(id){ for(var i=0;i<ZONES.length;i++){ if(ZONES[i].id===id) return ZONES[i][lang]; } return id; }
   function veh(id){ for(var i=0;i<VEHICLES.length;i++){ if(VEHICLES[i].id===id) return VEHICLES[i]; } return VEHICLES[0]; }
+  function recommendVehicle(p){ return p > VCLASS_MAX ? 'sprinter' : 'vclass'; }
   function ceil5(n){ return Math.ceil(n/ROUND_TO)*ROUND_TO; }
   function nearestZone(lat,lng){ var z='A',bd=1e9; for(var i=0;i<PTS.length;i++){ var p=PTS[i],d=(p[1]-lat)*(p[1]-lat)+(p[2]-lng)*(p[2]-lng); if(d<bd){bd=d;z=p[0];} } return z; }
 
@@ -696,8 +791,18 @@
     items.forEach(function(it){ var o=document.createElement('option'); o.value=getV(it); o.textContent=getT(it); if(getV(it)===val) o.selected=true; sel.appendChild(o); });
   }
 
+  function fillVeh(){
+    $veh.innerHTML='';
+    VEHICLES.forEach(function(v){
+      if(v.id==='vclass' && state.pax>VCLASS_MAX) return;   // V-Class doesn't fit, hide it
+      var o=document.createElement('option'); o.value=v.id; o.textContent=v[lang]+' · '+v.pax+' pax';
+      if(v.id===state.veh) o.selected=true; $veh.appendChild(o);
+    });
+  }
+
   function buildControls(){
-    fillSel($veh, VEHICLES, state.veh, function(x){return x.id;}, function(x){return x[lang]+' · '+x.pax+' pax';});
+    fillSel($pax, PAX_LIST, state.pax, function(x){return x;}, function(x){return ''+x;});
+    fillVeh();
     fillSel($from, ZONES, state.from, function(x){return x.id;}, function(x){return x[lang];});
     fillSel($to, ZONES, state.to, function(x){return x.id;}, function(x){return x[lang];});
     fillSel($hours, HOURS, state.hours, function(x){return x;}, function(x){return x+' '+T[lang].hours;});
@@ -725,7 +830,7 @@
     var v=veh(state.veh), total, breakdown, routeMsg;
     if(state.svc==='hourly'){
       total=ceil5(v.hourly[state.hours]*MARKUP);
-      breakdown=v[lang]+' · '+state.hours+' '+T[lang].hours;
+      breakdown=v[lang]+' · '+state.pax+' '+T[lang].paxword+' · '+state.hours+' '+T[lang].hours;
       routeMsg=T[lang].byhour+state.hours+'h';
     } else {
       var zone = ZONE_RANK[state.from] >= ZONE_RANK[state.to] ? state.from : state.to;
@@ -734,13 +839,16 @@
       var tripTxt = state.trip==='round' ? T[lang].roundtrip : T[lang].oneway;
       var pk = state.pickupName || (T[lang].zone+state.from);
       var dp = state.dropoffName || (T[lang].zone+state.to);
-      breakdown = v[lang]+' · '+tripTxt+' · '+T[lang].zone+zone;
+      breakdown = v[lang]+' · '+state.pax+' '+T[lang].paxword+' · '+tripTxt+' · '+T[lang].zone+zone;
       routeMsg = pk+' '+T[lang].to+' '+dp+', '+tripTxt;
     }
     $price.textContent='€'+total;
     $break.textContent=breakdown;
-    var msg = T[lang].bookintro+routeMsg+', '+v[lang]+'. '+T[lang].est+' €'+total+'.';
-    $cta.href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
+    var msg = T[lang].bookintro+routeMsg+', '+v[lang]+', '+state.pax+' '+T[lang].paxword+'. '+T[lang].est+' €'+total+'.';
+    lastTotal=total;
+    var waHref='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);
+    if($wa) $wa.href=waHref;
+    if($bkWa) $bkWa.href=waHref;
   }
 
   function initPlaces(){
@@ -768,6 +876,7 @@
   }
   window.rlInitMaps = initPlaces;
 
+  $pax.addEventListener('change', function(){ state.pax=parseInt(this.value,10); state.veh=recommendVehicle(state.pax); buildControls(); recalc(); });
   $veh.addEventListener('change', function(){ state.veh=this.value; recalc(); });
   $from.addEventListener('change', function(){ state.from=this.value; recalc(); });
   $to.addEventListener('change', function(){ state.to=this.value; recalc(); });
@@ -787,6 +896,88 @@
     buildControls(); setService(); recalc();
   }
   root.querySelectorAll('.rl-lang button').forEach(function(b){ b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); }); });
+  // ---- Booking modal + Stripe checkout ----
+  var DIAL=[['+34','España'],['+44','United Kingdom'],['+49','Deutschland'],['+33','France'],['+39','Italia'],['+31','Nederland'],['+32','Belgique'],['+41','Suisse'],['+43','Österreich'],['+351','Portugal'],['+353','Ireland'],['+45','Danmark'],['+46','Sverige'],['+47','Norge'],['+358','Suomi'],['+354','Ísland'],['+48','Polska'],['+30','Ελλάδα'],['+420','Česko'],['+36','Magyarország'],['+40','România'],['+385','Hrvatska'],['+386','Slovenija'],['+7','Россия'],['+380','Україна'],['+90','Türkiye'],['+972','Israel'],['+971','UAE'],['+966','Saudi Arabia'],['+974','Qatar'],['+965','Kuwait'],['+1','USA / Canada'],['+52','México'],['+55','Brasil'],['+54','Argentina'],['+56','Chile'],['+57','Colombia'],['+51','Perú'],['+61','Australia'],['+64','New Zealand'],['+81','日本'],['+82','한국'],['+86','中国'],['+91','India'],['+65','Singapore'],['+852','Hong Kong'],['+27','South Africa'],['+212','Morocco'],['+20','Egypt']];
+  function buildDial(){ if(!$bkCode) return; $bkCode.innerHTML=''; DIAL.forEach(function(d){ var o=document.createElement('option'); o.value=d[0]; o.textContent=d[1]+' ('+d[0]+')'; $bkCode.appendChild(o); }); $bkCode.value='+34'; }
+
+  function openBooking(){
+    if(!$modal) return;
+    var v=veh(state.veh), sum='<span class="rl-modal-price">€'+lastTotal+'</span>';
+    if(state.svc==='hourly'){
+      sum+='<b>'+v[lang]+'</b><br>'+state.pax+' '+T[lang].paxword+' · '+state.hours+' '+T[lang].hours;
+    } else {
+      var pk=state.pickupName||(T[lang].zone+state.from), dp=state.dropoffName||(T[lang].zone+state.to);
+      var tripTxt=state.trip==='round'?T[lang].roundtrip:T[lang].oneway;
+      sum+='<b>'+v[lang]+'</b><br>'+pk+' '+T[lang].to+' '+dp+'<br>'+state.pax+' '+T[lang].paxword+' · '+tripTxt;
+    }
+    if($mSum) $mSum.innerHTML=sum;
+    if($bkPaxView) $bkPaxView.value=state.pax;
+    if($bkDir){ var pn=(state.pickupName||'').toLowerCase(), dn=(state.dropoffName||'').toLowerCase();
+      if(state.svc==='hourly') $bkDir.value='island';
+      else if(pn.indexOf('airport')>=0||pn.indexOf('aeropuerto')>=0||pn.indexOf('ibz')>=0) $bkDir.value='arrival';
+      else if(dn.indexOf('airport')>=0||dn.indexOf('aeropuerto')>=0||dn.indexOf('ibz')>=0) $bkDir.value='departure';
+    }
+    if($bkErr){ $bkErr.style.color=''; $bkErr.textContent=''; }
+    $modal.classList.add('is-open'); $modal.setAttribute('aria-hidden','false');
+  }
+  function closeBooking(){ if(!$modal) return; $modal.classList.remove('is-open'); $modal.setAttribute('aria-hidden','true'); }
+
+  function pay(){
+    var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
+    var name=g('#bk-name'), email=g('#bk-email'), phone=g('#bk-phone'), code=$bkCode?$bkCode.value:'';
+    var date=g('#bk-date'), time=g('#bk-time'), flight=g('#bk-flight'), notes=g('#bk-notes'), dir=$bkDir?$bkDir.value:'';
+    var ERR={en:'Please fill in your name, a valid email, phone, date and time.',es:'Completa tu nombre, un correo válido, teléfono, fecha y hora.',fr:'Veuillez indiquer nom, e-mail valide, téléphone, date et heure.',de:'Bitte Name, gültige E-Mail, Telefon, Datum und Uhrzeit angeben.'};
+    if(!name||!email||!/.+@.+\..+/.test(email)||!phone||!date||!time){ if($bkErr){ $bkErr.style.color='#c0392b'; $bkErr.textContent=ERR[lang]||ERR.en; } return; }
+    var payload={ veh:state.veh, svc:state.svc, from:state.from, to:state.to, trip:state.trip, hours:state.hours, pax:state.pax, pickupName:state.pickupName, dropoffName:state.dropoffName, lang:lang, name:name, email:email, phone:(code+' '+phone).trim(), flight:flight, direction:dir, date:date, time:time, notes:notes };
+    if($bkPay) $bkPay.setAttribute('disabled','disabled');
+    var WAIT={en:'Redirecting to secure payment…',es:'Redirigiendo al pago seguro…',fr:'Redirection vers le paiement…',de:'Weiterleitung zur Zahlung…'};
+    if($bkErr){ $bkErr.style.color='var(--muted)'; $bkErr.textContent=WAIT[lang]||WAIT.en; }
+    fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){ return r.json(); })
+      .then(function(d){ if(d&&d.url){ window.location=d.url; } else { throw new Error('no url'); } })
+      .catch(function(){
+        var FAIL={en:'Payment could not start. Please try WhatsApp below.',es:'No se pudo iniciar el pago. Usa WhatsApp abajo.',fr:'Paiement impossible. Essayez WhatsApp ci-dessous.',de:'Zahlung nicht möglich. Bitte WhatsApp unten nutzen.'};
+        if($bkErr){ $bkErr.style.color='#c0392b'; $bkErr.textContent=FAIL[lang]||FAIL.en; }
+        if($bkPay) $bkPay.removeAttribute('disabled');
+      });
+  }
+
+  // ---- Payment method tabs ----
+  var pmPanels = {card: root.querySelector('#pm-card'), wise: root.querySelector('#pm-wise'), revolut: root.querySelector('#pm-revolut')};
+  root.querySelectorAll('#rl-paymethod button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var pm = b.getAttribute('data-pm');
+      root.querySelectorAll('#rl-paymethod button').forEach(function(x){ x.classList.toggle('is-active', x===b); });
+      Object.keys(pmPanels).forEach(function(k){ if(pmPanels[k]) pmPanels[k].style.display = k===pm ? '' : 'none'; });
+    });
+  });
+
+  // ---- Copy buttons ----
+  root.querySelectorAll('.rl-copy-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var text = b.getAttribute('data-copy');
+      if(navigator.clipboard){ navigator.clipboard.writeText(text).then(function(){ b.textContent='\u2713 Copied!'; setTimeout(function(){ b.textContent='Copy'; },1800); }); }
+      else { var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); b.textContent='\u2713 Copied!'; setTimeout(function(){ b.textContent='Copy'; },1800); }
+    });
+  });
+
+  // ---- Wise/Revolut WhatsApp confirm buttons ----
+  root.querySelectorAll('.rl-wa-confirm').forEach(function(b){
+    b.addEventListener('click', function(){
+      var g=function(id){ var el=root.querySelector(id); return el?el.value:''; };
+      var name=g('#bk-name'), v=veh(state.veh);
+      var pm = b.closest('#pm-wise') ? 'Wise' : 'Revolut';
+      var msg = T[lang].bookintro + name + ', \u20ac' + lastTotal + ' ' + v[lang] + ', ' + state.pax + ' ' + T[lang].paxword + '. Paid via ' + pm + '.';
+      window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg), '_blank');
+    });
+  });
+
+  if($cta) $cta.addEventListener('click', openBooking);
+  if($bkPay) $bkPay.addEventListener('click', pay);
+  root.querySelectorAll('#rl-modal [data-close]').forEach(function(el){ el.addEventListener('click', closeBooking); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeBooking(); });
+  buildDial();
+
   applyLang('en');
 
   root.querySelectorAll('.rl-faq-q').forEach(function(b){ b.addEventListener('click', function(){ var item=b.parentNode; var open=item.classList.toggle('is-open'); b.setAttribute('aria-expanded', open?'true':'false'); }); });
