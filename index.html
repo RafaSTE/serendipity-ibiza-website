@@ -42,7 +42,7 @@
   /* EDIT: paste your hero photo URL, e.g.  --rl-hero-img:url('https://...jpg'); */
   /* PREVIEW uses embedded images. For production, upload hero-ibiza.jpg / band-ibiza.jpg
      to Squarespace and replace each data URI with  url('https://...jpg') */
-  --rl-hero-img:url('hero.jpg');
+  --rl-hero-img:url('hero-es-vedra.jpg');
   --rl-band-img:url('band.jpg');
   /* Fleet card photos. EDIT: swap each data URI for a hosted url('https://...jpg') in production. */
   --rl-veh1-img:url('vclass.jpg');
@@ -93,7 +93,7 @@
 /* HERO */
 .rl-ibiza .rl-hero{position:relative;overflow:hidden;color:var(--white);text-align:center;min-height:88vh;display:flex;align-items:center;justify-content:center;padding:90px 22px}
 .rl-ibiza .rl-hero::before{content:'';position:absolute;inset:0;z-index:0;background:var(--rl-hero-img) center/cover no-repeat;animation:rl-kb 26s ease-in-out infinite alternate}
-.rl-ibiza .rl-hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(0,30,33,.55) 0%, rgba(0,30,33,.3) 44%, rgba(0,39,43,.66) 100%)}
+.rl-ibiza .rl-hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(0,30,33,.58) 0%, rgba(0,30,33,.44) 44%, rgba(0,39,43,.7) 100%)}
 .rl-ibiza .rl-hero > .rl-wrap{position:relative;z-index:2}
 .rl-ibiza .rl-hero > .rl-wrap > *{animation:rl-up .9s ease both}
 .rl-ibiza .rl-hero > .rl-wrap > *:nth-child(2){animation-delay:.08s}
@@ -102,7 +102,7 @@
 .rl-ibiza .rl-hero > .rl-wrap > *:nth-child(5){animation-delay:.32s}
 @keyframes rl-kb{from{transform:scale(1.03)}to{transform:scale(1.13)}}
 @keyframes rl-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.rl-ibiza .rl-hero-eyebrow{font-size:.82rem;font-weight:500;color:var(--teal-lt)}
+.rl-ibiza .rl-hero-eyebrow{font-size:.82rem;font-weight:500;color:#cfeeee;text-shadow:0 1px 16px rgba(0,22,24,.7)}
 .rl-ibiza .rl-hero h1{font-family:var(--serif);font-size:clamp(2.7rem,7vw,5.2rem);font-weight:500;letter-spacing:-.005em;line-height:1.04;margin:.6rem auto 0;max-width:15ch;text-shadow:0 2px 44px rgba(0,0,0,.45)}
 .rl-ibiza .rl-hero p.rl-hero-sub{margin:1.2rem auto 0;max-width:40ch;font-size:1.22rem;color:#e6e6ea;text-shadow:0 1px 26px rgba(0,0,0,.5)}
 .rl-ibiza .rl-hero-meta{margin-top:4rem;font-size:.8rem;letter-spacing:.08em;color:rgba(255,255,255,.72);text-shadow:0 1px 12px rgba(0,0,0,.35)}
